@@ -3,9 +3,154 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AfterShot — A private diary for allergy shots</title>
-<meta name="description" content="AfterShot is a private iPhone diary for allergy shot check-ins. Everything stays on your device. Export a one-page report for your allergist.">
-<link rel="stylesheet" href="/assets/style.css">
+<title>AfterShot — A private diary for allergy shots, on iPhone</title>
+<meta name="description" content="AfterShot for iPhone: log each allergy shot, get two quick check-in reminders, and hand your allergist a one-page report. Everything stays on your device.">
+<meta property="og:title" content="AfterShot — A private diary for allergy shots">
+<meta property="og:description" content="Log each injection, follow up at the right moments, and bring a one-page report to your allergist. No servers, no accounts.">
+<meta property="og:url" content="https://alifo.app/aftershot/">
+<style>
+/* AfterShot landing — self-contained. No scripts, no external fonts, no trackers.
+   Palette taken from the app itself: ink, amber (a check-in is waiting), mint (done). */
+:root {
+  --ink: #10150f;
+  --ink-2: #171e15;
+  --card: #1c241a;
+  --line: #2a3427;
+  --paper: #f1efe4;
+  --paper-dim: #b9bfae;
+  --amber: #e2a43c;
+  --mint: #9fd8a8;
+  --serif: ui-serif, "New York", Georgia, "Times New Roman", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--paper);
+  font: 17px/1.65 var(--sans);
+}
+.wrap { max-width: 1020px; margin: 0 auto; padding: 0 24px; }
+
+/* Header */
+.site-header {
+  display: flex; align-items: baseline; justify-content: space-between;
+  padding: 28px 0 8px;
+}
+.brand { font-size: 16px; font-weight: 700; color: var(--paper); text-decoration: none; letter-spacing: .01em; }
+.brand span { color: var(--amber); }
+.crumbs { font-size: 14px; }
+.crumbs a { color: var(--paper-dim); text-decoration: none; border-bottom: 1px solid var(--line); margin-left: 14px; }
+.crumbs a:hover, .crumbs a:focus-visible { color: var(--amber); border-color: var(--amber); }
+
+/* Hero */
+.hero {
+  display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center;
+  padding: 56px 0 72px;
+}
+.eyebrow {
+  font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--amber); margin: 0 0 14px;
+}
+h1 {
+  font-family: var(--serif);
+  font-size: 56px; line-height: 1.05; font-weight: 700; letter-spacing: -.01em;
+  margin: 0 0 8px;
+}
+h1 em { font-style: italic; color: var(--mint); }
+.lede { font-size: 20px; color: var(--paper-dim); margin: 14px 0 30px; max-width: 34ch; }
+
+/* App Store badge — inline SVG, links once the app is live */
+.store-badge { display: inline-block; line-height: 0; border-radius: 12px; }
+.store-badge:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
+.store-note { font-size: 14px; color: var(--paper-dim); margin-top: 14px; }
+.store-note b { color: var(--paper); font-weight: 600; }
+
+/* Phone mockup — pure CSS, mirrors the app's Today screen */
+.phone {
+  width: 300px; margin: 0 auto;
+  background: #05070a; border-radius: 44px; padding: 12px;
+  border: 1px solid #262b26;
+  box-shadow: 0 30px 80px rgba(0,0,0,.55);
+}
+.screen {
+  background: linear-gradient(180deg, #131a12 0%, #0e130d 100%);
+  border-radius: 34px; padding: 26px 18px 20px; overflow: hidden;
+}
+.s-date { font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--paper-dim); }
+.s-title { font-family: var(--serif); font-size: 27px; line-height: 1.1; margin: 6px 0 2px; }
+.s-title em { font-style: italic; color: var(--mint); }
+.s-sub { font-size: 12px; color: var(--paper-dim); margin: 0 0 16px; }
+.s-card {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+  padding: 12px 12px; margin-bottom: 10px;
+}
+.s-left { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.dot { width: 10px; height: 10px; border-radius: 50%; background: var(--amber); flex: none; }
+.dot.off { background: transparent; border: 1.5px solid var(--line); }
+.s-card .t { font-size: 13px; font-weight: 600; }
+.s-card .d { font-size: 11px; color: var(--paper-dim); }
+.pill {
+  flex: none; font-size: 12px; font-weight: 700; color: #171204;
+  background: var(--amber); border-radius: 999px; padding: 6px 12px;
+}
+.s-note {
+  border-left: 2px solid var(--mint); background: rgba(159,216,168,.06);
+  border-radius: 10px; padding: 10px 12px; font-size: 11.5px; color: var(--paper-dim);
+  margin-top: 14px;
+}
+.s-note b { color: var(--paper); }
+.s-foot { text-align: center; font-size: 10px; color: var(--paper-dim); margin-top: 16px; }
+
+/* Sections */
+section { padding: 56px 0; border-top: 1px solid var(--line); }
+h2 {
+  font-family: var(--serif); font-size: 32px; font-weight: 700; letter-spacing: -.01em;
+  margin: 0 0 8px;
+}
+.sec-lede { color: var(--paper-dim); margin: 0 0 34px; max-width: 60ch; }
+
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.step {
+  background: var(--ink-2); border: 1px solid var(--line); border-radius: 16px; padding: 22px;
+}
+.step .when {
+  font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--amber); margin-bottom: 8px;
+}
+.step h3 { font-size: 18px; margin: 0 0 8px; }
+.step p { font-size: 15px; color: var(--paper-dim); margin: 0; }
+
+.nevers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.never { border-top: 2px solid var(--mint); padding-top: 14px; }
+.never h3 { font-size: 17px; margin: 0 0 6px; }
+.never p { font-size: 15px; color: var(--paper-dim); margin: 0; }
+
+.faq dt { font-weight: 700; margin-top: 22px; }
+.faq dd { margin: 6px 0 0; color: var(--paper-dim); max-width: 68ch; }
+.faq a { color: var(--mint); }
+
+.cta { text-align: center; }
+.cta h2 { font-size: 36px; }
+.cta .store-badge { margin-top: 18px; }
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--line); padding: 26px 0 48px;
+  font-size: 13.5px; color: var(--paper-dim);
+}
+.site-footer p { margin: 0 0 4px; }
+.site-footer a { color: var(--paper-dim); }
+
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; gap: 40px; padding: 40px 0 56px; }
+  h1 { font-size: 42px; }
+  .steps, .nevers { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -13,37 +158,136 @@
   <header class="site-header">
     <a class="brand" href="/">alifo<span>.app</span></a>
     <nav class="crumbs">
-      <a href="/aftershot/privacy/">Privacy</a> &nbsp;·&nbsp;
+      <a href="#how">How it works</a>
+      <a href="/aftershot/privacy/">Privacy</a>
       <a href="/aftershot/support/">Support</a>
     </nav>
   </header>
 
-  <div class="ring" aria-hidden="true"></div>
+  <main>
+    <div class="hero">
+      <div>
+        <p class="eyebrow">For iPhone · Allergy immunotherapy</p>
+        <h1>Every shot, <em>remembered.</em></h1>
+        <p class="lede">AfterShot is a private diary for allergy shot check-ins — the two hours and the morning after that your allergist always asks about.</p>
 
-  <h1>AfterShot</h1>
-  <p class="lede">A private diary for allergy shot check-ins — for the hours and days after you leave the office.</p>
+        <!-- At launch, set the real link: https://apps.apple.com/app/id<ASC_APP_ID> -->
+        <a class="store-badge" href="https://apps.apple.com/app/aftershot/id0000000000" aria-label="Download AfterShot on the App Store">
+          <svg width="180" height="60" viewBox="0 0 180 60" xmlns="http://www.w3.org/2000/svg" role="img">
+            <rect x="1" y="1" width="178" height="58" rx="12" fill="#000" stroke="#4a5245" stroke-width="1"/>
+            <path fill="#fff" d="M38.6 30.9c0-3.6 3-5.4 3.1-5.5-1.7-2.5-4.3-2.8-5.2-2.8-2.2-.2-4.3 1.3-5.5 1.3-1.1 0-2.9-1.3-4.7-1.2-2.4 0-4.7 1.4-5.9 3.6-2.5 4.4-.6 10.9 1.8 14.5 1.2 1.7 2.7 3.7 4.6 3.6 1.8-.1 2.5-1.2 4.7-1.2s2.8 1.2 4.7 1.2c2 0 3.2-1.8 4.4-3.5 1.4-2 2-4 2-4.1-.1 0-3.9-1.5-4-5.9zM35 19.9c1-1.2 1.7-2.9 1.5-4.6-1.4.1-3.2 1-4.2 2.2-.9 1.1-1.7 2.8-1.5 4.4 1.6.2 3.2-.8 4.2-2z"/>
+            <text x="56" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="11" fill="#fff">Download on the</text>
+            <text x="56" y="45" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="19" font-weight="600" fill="#fff">App Store</text>
+          </svg>
+        </a>
+        <p class="store-note"><b>Free.</b> Full history and PDF export, for life. Your data never leaves your iPhone.</p>
+      </div>
 
-  <p>Allergy immunotherapy means regular injections for years. What happens at the clinic is written down. What happens two hours later, or the next morning, usually isn't — and it's exactly what your allergist asks about at the next visit.</p>
+      <div class="phone" role="img" aria-label="AfterShot Today screen: an injection just logged, with a 2-hour check-in ready and a next-morning reminder scheduled">
+        <div class="screen">
+          <div class="s-date">Wednesday · Build-up phase</div>
+          <div class="s-title">Injection <em>recorded.</em></div>
+          <p class="s-sub">Your 2-hour check-in is ready — 20 seconds.</p>
 
-  <h2>How it works</h2>
-  <ul>
-    <li><strong>Log the shot as you leave.</strong> One tap per injection — a visit can carry one, two, or three.</li>
-    <li><strong>Two quick check-ins.</strong> A 20-second follow-up at two hours and the next morning, with a reminder for each.</li>
-    <li><strong>A one-page report.</strong> Export a clear PDF of your history to bring to your next appointment.</li>
-  </ul>
+          <div class="s-card">
+            <div class="s-left">
+              <span class="dot"></span>
+              <div>
+                <div class="t">2-hour check-in</div>
+                <div class="d">Ready — 20 seconds</div>
+              </div>
+            </div>
+            <span class="pill">Check-in</span>
+          </div>
 
-  <h2>What AfterShot never does</h2>
-  <ul>
-    <li>It never sends your data anywhere. There is no server, no account, no analytics. Everything lives on your iPhone.</li>
-    <li>It never interprets your entries. AfterShot records what you observed — reading it is between you and your allergist.</li>
-    <li>It never locks your history. Your full history and PDF/CSV export are free, for life.</li>
-  </ul>
+          <div class="s-card">
+            <div class="s-left">
+              <span class="dot off"></span>
+              <div>
+                <div class="t">Next-morning check-in</div>
+                <div class="d">Tomorrow 09:00 · reminder set</div>
+              </div>
+            </div>
+          </div>
 
-  <h2>Get AfterShot</h2>
-  <p>AfterShot is coming to the App Store for iPhone. This page will link to it at launch.</p>
+          <div class="s-note"><b>Your report builds itself.</b> Every check-in lands on a one-page PDF for your allergist.</div>
+          <div class="s-foot">Kept on this iPhone. No account, no server.</div>
+        </div>
+      </div>
+    </div>
+
+    <section id="how">
+      <h2>Twenty seconds, twice.</h2>
+      <p class="sec-lede">Allergy shots go on for years — weekly, then monthly. The clinic writes down what happens in the chair. AfterShot remembers what happens after.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="when">As you leave</div>
+          <h3>Log the shot</h3>
+          <p>One tap per injection — a visit can carry one, two, or three, and each arm is tracked separately.</p>
+        </div>
+        <div class="step">
+          <div class="when">2 hours · next morning</div>
+          <h3>Answer two check-ins</h3>
+          <p>A reminder arrives at the right moment. Twenty seconds to note what you see, with a photo if you want one.</p>
+        </div>
+        <div class="step">
+          <div class="when">At your next visit</div>
+          <h3>Hand over one page</h3>
+          <p>A clear PDF of your history, ready for your allergist. CSV too, if your clinic prefers raw data.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>What AfterShot never does.</h2>
+      <p class="sec-lede">The promise is structural, not a setting. There is nothing to opt out of, because there is nothing collecting.</p>
+      <div class="nevers">
+        <div class="never">
+          <h3>Never sends your data</h3>
+          <p>No server, no account, no analytics. The app makes no network connections at all — everything lives on your iPhone.</p>
+        </div>
+        <div class="never">
+          <h3>Never interprets</h3>
+          <p>AfterShot records what you observed. Reading it is between you and your allergist.</p>
+        </div>
+        <div class="never">
+          <h3>Never locks your history</h3>
+          <p>Your full history and PDF/CSV export are free, for life. No subscription standing between you and your own diary.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Questions.</h2>
+      <dl class="faq">
+        <dt>Is it really free?</dt>
+        <dd>Yes. Logging, check-ins, full history, and export are free forever. A future version may add optional extras — the diary itself will never be one of them.</dd>
+        <dt>Where is my data stored?</dt>
+        <dd>On your iPhone, and nowhere else. The details are in the <a href="/aftershot/privacy/">privacy policy</a> — it is short, because there is little to say when nothing is collected.</dd>
+        <dt>I missed a check-in. Is it lost?</dt>
+        <dd>No. Pending check-ins stay reachable from the Today screen and from the visit itself, whenever you get to them.</dd>
+        <dt>Does it work for children's treatment?</dt>
+        <dd>A parent or caregiver can keep the diary on their own iPhone on behalf of a patient.</dd>
+      </dl>
+    </section>
+
+    <section class="cta">
+      <h2>Bring answers to your next visit.</h2>
+      <!-- At launch, set the real link: https://apps.apple.com/app/id<ASC_APP_ID> -->
+      <a class="store-badge" href="https://apps.apple.com/app/aftershot/id0000000000" aria-label="Download AfterShot on the App Store">
+        <svg width="180" height="60" viewBox="0 0 180 60" xmlns="http://www.w3.org/2000/svg" role="img">
+          <rect x="1" y="1" width="178" height="58" rx="12" fill="#000" stroke="#4a5245" stroke-width="1"/>
+          <path fill="#fff" d="M38.6 30.9c0-3.6 3-5.4 3.1-5.5-1.7-2.5-4.3-2.8-5.2-2.8-2.2-.2-4.3 1.3-5.5 1.3-1.1 0-2.9-1.3-4.7-1.2-2.4 0-4.7 1.4-5.9 3.6-2.5 4.4-.6 10.9 1.8 14.5 1.2 1.7 2.7 3.7 4.6 3.6 1.8-.1 2.5-1.2 4.7-1.2s2.8 1.2 4.7 1.2c2 0 3.2-1.8 4.4-3.5 1.4-2 2-4 2-4.1-.1 0-3.9-1.5-4-5.9zM35 19.9c1-1.2 1.7-2.9 1.5-4.6-1.4.1-3.2 1-4.2 2.2-.9 1.1-1.7 2.8-1.5 4.4 1.6.2 3.2-.8 4.2-2z"/>
+          <text x="56" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="11" fill="#fff">Download on the</text>
+          <text x="56" y="45" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="19" font-weight="600" fill="#fff">App Store</text>
+        </svg>
+      </a>
+      <p class="store-note">iPhone · iOS · English &amp; French</p>
+    </section>
+  </main>
 
   <footer class="site-footer">
-    <p>© 2026 Alifo. All rights reserved. &nbsp;·&nbsp; <a href="/aftershot/privacy/">Privacy policy</a> &nbsp;·&nbsp; <a href="/aftershot/support/">Support</a></p>
+    <p>© 2026 Alifo. All rights reserved. · <a href="/aftershot/privacy/">Privacy policy</a> · <a href="/aftershot/support/">Support</a></p>
     <p>This page loads no scripts, no external fonts, and no trackers.</p>
   </footer>
 

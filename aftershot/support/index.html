@@ -5,7 +5,44 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Support — AfterShot</title>
 <meta name="description" content="Get help with AfterShot. Contact support and find answers to common questions.">
-<link rel="stylesheet" href="/assets/style.css">
+<style>
+:root {
+  --ink: #10150f; --ink-2: #171e15; --line: #2a3427;
+  --paper: #f1efe4; --paper-dim: #b9bfae;
+  --amber: #e2a43c; --mint: #9fd8a8;
+  --serif: ui-serif, "New York", Georgia, "Times New Roman", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--ink); color: var(--paper); font: 17px/1.7 var(--sans); }
+.wrap { max-width: 680px; margin: 0 auto; padding: 28px 24px 64px; }
+.site-header { display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 36px; }
+.brand { font-size: 16px; font-weight: 700; color: var(--paper); text-decoration: none; }
+.brand span { color: var(--amber); }
+.crumbs { font-size: 14px; }
+.crumbs a { color: var(--paper-dim); text-decoration: none; border-bottom: 1px solid var(--line); margin-left: 14px; }
+.crumbs a:hover, .crumbs a:focus-visible { color: var(--amber); border-color: var(--amber); }
+h1 { font-family: var(--serif); font-size: 40px; line-height: 1.1; font-weight: 700; letter-spacing: -.01em; margin: 0 0 8px; }
+.lede { font-size: 20px; color: var(--paper-dim); margin: 14px 0 26px; }
+.contact {
+  background: var(--ink-2); border: 1px solid var(--line); border-radius: 16px;
+  padding: 20px 22px; margin-bottom: 40px;
+}
+.contact .label { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--amber); margin-bottom: 6px; }
+.contact a { color: var(--mint); font-size: 19px; font-weight: 600; text-decoration: none; }
+.contact a:hover, .contact a:focus-visible { text-decoration: underline; }
+.contact .meta { font-size: 14px; color: var(--paper-dim); margin-top: 6px; }
+h2 { font-size: 14px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--amber); margin: 0 0 18px; }
+dl { margin: 0; }
+dt { font-weight: 700; margin-top: 22px; }
+dd { margin: 6px 0 0; color: var(--paper-dim); }
+dd a { color: var(--mint); }
+.site-footer { margin-top: 52px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 13.5px; color: var(--paper-dim); }
+.site-footer p { margin: 0 0 4px; }
+.site-footer a { color: var(--paper-dim); }
+@media (max-width: 480px) { h1 { font-size: 32px; } .lede { font-size: 18px; } }
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -13,7 +50,7 @@
   <header class="site-header">
     <a class="brand" href="/">alifo<span>.app</span></a>
     <nav class="crumbs">
-      <a href="/aftershot/">AfterShot</a> &nbsp;·&nbsp;
+      <a href="/aftershot/">AfterShot</a>
       <a href="/aftershot/privacy/">Privacy</a>
     </nav>
   </header>
@@ -21,30 +58,32 @@
   <h1>Support</h1>
   <p class="lede">Questions, problems, ideas — write to us. A person reads every message.</p>
 
-  <p><strong>Email:</strong> <a href="mailto:support@alifo.app">support@alifo.app</a></p>
-  <p class="meta">We reply within two business days.</p>
-
-  <hr>
+  <div class="contact">
+    <div class="label">Email</div>
+    <a href="mailto:support@alifo.app">support@alifo.app</a>
+    <div class="meta">We reply within two business days.</div>
+  </div>
 
   <h2>Common questions</h2>
+  <dl>
+    <dt>Where is my data stored?</dt>
+    <dd>On your iPhone, and nowhere else. AfterShot has no server and makes no network connections. See the <a href="/aftershot/privacy/">privacy policy</a>.</dd>
 
-  <p><strong>Where is my data stored?</strong><br>
-  On your iPhone, and nowhere else. AfterShot has no server and makes no network connections. See the <a href="/aftershot/privacy/">privacy policy</a>.</p>
+    <dt>I missed a check-in. Can I still answer it?</dt>
+    <dd>Yes. Pending check-ins stay reachable from the Today screen and from the visit itself, at any time.</dd>
 
-  <p><strong>I missed a check-in. Can I still answer it?</strong><br>
-  Yes. Pending check-ins stay reachable from the Today screen and from the visit itself, at any time.</p>
+    <dt>Can I log a visit from a few days ago?</dt>
+    <dd>Yes. You can add a past visit with one to three injections. Dates you don't know are simply left unrecorded — AfterShot never fills one in for you.</dd>
 
-  <p><strong>Can I log a visit from a few days ago?</strong><br>
-  Yes. You can add a past visit with one to three injections. Dates you don't know are simply left unrecorded — AfterShot never fills one in for you.</p>
+    <dt>How do I share my history with my allergist?</dt>
+    <dd>Open your history and export a one-page PDF, or a CSV if your clinic prefers raw data. Both are free, for your full history, always.</dd>
 
-  <p><strong>How do I share my history with my allergist?</strong><br>
-  Open your history and export a one-page PDF, or a CSV if your clinic prefers raw data. Both are free, for your full history, always.</p>
-
-  <p><strong>How do I delete my data?</strong><br>
-  Each entry can be deleted in the app, or you can erase everything from Settings. Deleting the app removes all of its data from your device.</p>
+    <dt>How do I delete my data?</dt>
+    <dd>Each entry can be deleted in the app, or you can erase everything from Settings. Deleting the app removes all of its data from your device.</dd>
+  </dl>
 
   <footer class="site-footer">
-    <p>© 2026 Alifo. All rights reserved. &nbsp;·&nbsp; <a href="/aftershot/">AfterShot</a> &nbsp;·&nbsp; <a href="/aftershot/privacy/">Privacy policy</a></p>
+    <p>© 2026 Alifo. All rights reserved. · <a href="/aftershot/">AfterShot</a> · <a href="/aftershot/privacy/">Privacy policy</a></p>
     <p>This page loads no scripts, no external fonts, and no trackers.</p>
   </footer>
 
