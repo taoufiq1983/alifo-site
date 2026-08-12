@@ -1,0 +1,151 @@
+/* Alifo — shared stylesheet.
+   Deliberately self-contained: no external fonts, no scripts, no trackers.
+   The site keeps the same promise as the apps it presents. */
+
+:root {
+  --paper: #f7f8f6;
+  --ink: #16232c;
+  --muted: #5f6e77;
+  --teal: #23707e;
+  --hairline: #dce2e3;
+  --card: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  font-feature-settings: "kern";
+}
+
+.wrap {
+  max-width: 660px;
+  margin: 0 auto;
+  padding: 48px 24px 64px;
+}
+
+/* Header */
+.site-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 28px;
+}
+
+.brand {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.brand span { color: var(--teal); }
+
+.crumbs {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.crumbs a { color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--hairline); }
+.crumbs a:hover, .crumbs a:focus-visible { color: var(--teal); border-color: var(--teal); }
+
+/* Signature mark: the measured circle (echoes the app's 1:1 scale ring) */
+.ring {
+  width: 84px;
+  height: 84px;
+  border: 1.5px solid var(--teal);
+  border-radius: 50%;
+  position: relative;
+  margin: 8px 0 28px;
+}
+.ring::before, .ring::after {
+  content: "";
+  position: absolute;
+  background: var(--teal);
+}
+.ring::before { width: 1.5px; height: 10px; left: 50%; top: -5px; transform: translateX(-50%); }
+.ring::after  { width: 10px; height: 1.5px; top: 50%; left: -5px; transform: translateY(-50%); }
+
+/* Type scale */
+h1 {
+  font-size: 34px;
+  line-height: 1.2;
+  font-weight: 750;
+  letter-spacing: -0.015em;
+  margin: 0 0 12px;
+}
+
+.lede {
+  font-size: 19px;
+  color: var(--muted);
+  margin: 0 0 36px;
+}
+
+h2 {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin: 40px 0 10px;
+}
+
+p { margin: 0 0 14px; }
+
+ul { padding-left: 20px; margin: 0 0 14px; }
+li { margin-bottom: 6px; }
+
+a { color: var(--teal); }
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--hairline);
+  margin: 40px 0;
+}
+
+/* Cards (app list on the studio page) */
+.app-card {
+  display: block;
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  padding: 22px 24px;
+  margin: 14px 0;
+  text-decoration: none;
+  color: var(--ink);
+  transition: border-color 120ms ease;
+}
+.app-card:hover, .app-card:focus-visible { border-color: var(--teal); }
+.app-card .name { font-weight: 700; font-size: 19px; }
+.app-card .tag { color: var(--muted); font-size: 15px; margin-top: 2px; }
+
+/* Meta line (dates, contact) */
+.meta { font-size: 14px; color: var(--muted); }
+
+/* Footer */
+.site-footer {
+  margin-top: 56px;
+  padding-top: 20px;
+  border-top: 1px solid var(--hairline);
+  font-size: 13.5px;
+  color: var(--muted);
+}
+.site-footer p { margin: 0 0 4px; }
+
+@media (max-width: 480px) {
+  .wrap { padding: 32px 20px 48px; }
+  h1 { font-size: 28px; }
+  .lede { font-size: 17px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
