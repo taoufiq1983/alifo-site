@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KeyToons — Fun keyboard sounds for your Mac</title>
+<meta name="description" content="KeyToons plays a playful sound every time you type. A tiny menu bar app for macOS.">
+<style>
+:root {
+  --ink: #10150f; --ink-2: #171e15; --line: #2a3427;
+  --paper: #f1efe4; --paper-dim: #b9bfae;
+  --amber: #e2a43c; --mint: #9fd8a8;
+  --serif: ui-serif, "New York", Georgia, "Times New Roman", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--ink); color: var(--paper); font: 17px/1.7 var(--sans); }
+.wrap { max-width: 680px; margin: 0 auto; padding: 28px 24px 64px; }
+.site-header { display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 36px; }
+.brand { font-size: 16px; font-weight: 700; color: var(--paper); text-decoration: none; }
+.brand span { color: var(--amber); }
+.crumbs { font-size: 14px; }
+.crumbs a { color: var(--paper-dim); text-decoration: none; border-bottom: 1px solid var(--line); margin-left: 14px; }
+.crumbs a:hover, .crumbs a:focus-visible { color: var(--amber); border-color: var(--amber); }
+h1 { font-family: var(--serif); font-size: 40px; line-height: 1.1; font-weight: 700; letter-spacing: -.01em; margin: 0 0 8px; }
+.lede { font-size: 20px; color: var(--paper-dim); margin: 14px 0 26px; }
+.contact { background: var(--ink-2); border: 1px solid var(--line); border-radius: 16px; padding: 20px 22px; margin-bottom: 40px; }
+.contact .label { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--amber); margin-bottom: 6px; }
+.contact a { color: var(--mint); font-size: 19px; font-weight: 600; text-decoration: none; }
+.contact a:hover, .contact a:focus-visible { text-decoration: underline; }
+.contact .meta { font-size: 14px; color: var(--paper-dim); margin-top: 6px; }
+h2 { font-size: 14px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--amber); margin: 40px 0 18px; }
+p { color: var(--paper-dim); }
+dl { margin: 0; }
+dt { font-weight: 700; margin-top: 22px; }
+dd { margin: 6px 0 0; color: var(--paper-dim); }
+dd a, p a { color: var(--mint); }
+.site-footer { margin-top: 52px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 13.5px; color: var(--paper-dim); }
+.site-footer p { margin: 0 0 4px; }
+.site-footer a { color: var(--paper-dim); }
+@media (max-width: 480px) { h1 { font-size: 32px; } .lede { font-size: 18px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="site-header">
+    <a class="brand" href="/">alifo<span>.app</span></a>
+    <nav class="crumbs">
+      <a href="/keytoons/support/">Support</a>
+      <a href="/keytoons/privacy/">Privacy</a>
+    </nav>
+  </header>
+
+  <h1>KeyToons</h1>
+  <p class="lede">Fun keyboard sounds for your Mac. Every key has its own voice.</p>
+
+  <p>KeyToons lives quietly in your menu bar and plays a playful sound each time you press a key. Type an email and hear a melody. Hit Return and trigger an explosion. Delete a typo and hear a sad little duck.</p>
+
+  <h2>Free themes</h2>
+  <dl>
+    <dt>Melody</dt><dd>Every key plays a note. Your typing becomes music.</dd>
+    <dt>Arcade</dt><dd>Retro 8-bit beeps, coins and lasers.</dd>
+    <dt>Bubbles</dt><dd>Soft bloops and splashes.</dd>
+  </dl>
+
+  <h2>Premium Theme Pack</h2>
+  <dl>
+    <dt>Duck</dt><dd>Quack, quack, QUACK.</dd>
+    <dt>Cartoon</dt><dd>Fuse ticks, and a big boom on Return.</dd>
+    <dt>Robot</dt><dd>Beeps, servos and "mission complete".</dd>
+    <dt>Sci-Fi</dt><dd>Lasers, whooshes and teleporters.</dd>
+    <dt>Drum Kit</dt><dd>Hi-hats, a kick on Space, a crash on Return.</dd>
+  </dl>
+  <p>One purchase unlocks all five, on every Mac signed in with your Apple Account.</p>
+
+  <h2>Private by design</h2>
+  <p>KeyToons only detects that a key was pressed in order to play a sound. What you type is never recorded, stored or sent anywhere. No account, no tracking, no network connections. Read the <a href="/keytoons/privacy/">privacy policy</a>.</p>
+
+  <footer class="site-footer">
+    <p>© 2026 Alifo. All rights reserved. · <a href="/keytoons/support/">Support</a> · <a href="/keytoons/privacy/">Privacy policy</a></p>
+    <p>This page loads no scripts, no external fonts, and no trackers.</p>
+  </footer>
+</div>
+</body>
+</html>
