@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Extracto — Support</title>
+<meta name="description" content="Help with Extracto: supported files, passwords, tables, purchases.">
+<style>
+:root {
+  --ink: #12302f; --ink-2: #ffffff; --line: #d3e2e1;
+  --paper: #f3f7f6; --paper-dim: #4a6362;
+  --teal: #0a6b70; --mint: #0a6b70;
+  --serif: ui-serif, "New York", Georgia, "Times New Roman", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --ink: #e7f1f0; --ink-2: #172526; --line: #2b3d3e; --paper: #0f1b1c; --paper-dim: #a7bcbb; --teal: #5cc7c7; --mint: #5cc7c7; }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 17px/1.7 var(--sans); }
+.wrap { max-width: 680px; margin: 0 auto; padding: 28px 24px 64px; }
+.site-header { display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 36px; }
+.brand { font-size: 16px; font-weight: 700; color: var(--ink); text-decoration: none; }
+.brand span { color: var(--teal); }
+.crumbs { font-size: 14px; }
+.crumbs a { color: var(--paper-dim); text-decoration: none; border-bottom: 1px solid var(--line); margin-left: 14px; }
+.crumbs a:hover, .crumbs a:focus-visible { color: var(--teal); border-color: var(--teal); }
+h1 { font-family: var(--serif); font-size: 40px; line-height: 1.1; font-weight: 700; letter-spacing: -.01em; margin: 0 0 8px; }
+.lede { font-size: 20px; color: var(--paper-dim); margin: 14px 0 26px; }
+.contact { background: var(--ink-2); border: 1px solid var(--line); border-radius: 16px; padding: 20px 22px; margin-bottom: 40px; }
+.contact .label { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--teal); margin-bottom: 6px; }
+.contact a { color: var(--mint); font-size: 19px; font-weight: 600; text-decoration: none; }
+.contact a:hover, .contact a:focus-visible { text-decoration: underline; }
+.contact .meta { font-size: 14px; color: var(--paper-dim); margin-top: 6px; }
+h2 { font-size: 14px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--teal); margin: 40px 0 18px; }
+p { color: var(--paper-dim); }
+dl { margin: 0; }
+dt { font-weight: 700; margin-top: 22px; }
+dd { margin: 6px 0 0; color: var(--paper-dim); }
+dd a, p a { color: var(--mint); }
+.site-footer { margin-top: 52px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 13.5px; color: var(--paper-dim); }
+.site-footer p { margin: 0 0 4px; }
+.site-footer a { color: var(--paper-dim); }
+@media (max-width: 480px) { h1 { font-size: 32px; } .lede { font-size: 18px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="site-header">
+    <a class="brand" href="/">alifo<span>.app</span></a>
+    <nav class="crumbs">
+      <a href="/extracto/">Extracto</a>
+      <a href="/extracto/privacy/">Privacy</a>
+    </nav>
+  </header>
+
+  <h1>Support</h1>
+  <p class="lede">Questions, problems, ideas — write to us. A person reads every message.</p>
+
+  <div class="contact">
+    <div class="label">Email</div>
+    <a href="mailto:support@alifo.app">support@alifo.app</a>
+    <div class="meta">We reply within two business days.</div>
+  </div>
+
+  <h2>Common questions</h2>
+  <dl>
+    <dt>Which files does Extracto read?</dt>
+    <dd>PDF, PNG, JPEG, HEIC, TIFF and WebP. PDFs that already contain text are read directly; scans and photos go through text recognition on your Mac.</dd>
+
+    <dt>"This PDF is protected by a password."</dt>
+    <dd>Open the PDF in Preview, enter its password, choose File › Export as PDF without a password, then drop the new file on Extracto.</dd>
+
+    <dt>Some text is wrong or missing.</dt>
+    <dd>Recognition works best on sharp, well-lit pages. For photos, hold the phone parallel to the page and avoid shadows; for scans, 200–300 dpi is ideal. Handwriting is not supported.</dd>
+
+    <dt>A table came out as plain text.</dt>
+    <dd>Extracto detects tables from aligned columns. Very irregular tables, or tables with merged cells, may come out as text: send us an example (without personal data) and we will look at it.</dd>
+
+    <dt>What does "free limit" mean?</dt>
+    <dd>Without Extracto Pro you can read 10 pages a day. The counter resets every day. Extracto Pro removes the limit.</dd>
+
+    <dt>I bought Extracto Pro on another Mac.</dt>
+    <dd>Open Extracto › Settings › Extracto Pro and click "Restore Purchases". The purchase is also shared with your family.</dd>
+
+    <dt>Where are my exports?</dt>
+    <dd>Wherever you chose to save them. Extracto never overwrites a file: duplicates get " 2", " 3"…</dd>
+
+    <dt>How do I uninstall Extracto?</dt>
+    <dd>Quit Extracto, then drag it from Applications to the Trash.</dd>
+  </dl>
+
+  <h2>En français</h2>
+  <dl>
+    <dt>« Ce PDF est protégé par un mot de passe. »</dt>
+    <dd>Ouvrez le PDF dans Aperçu, saisissez le mot de passe, choisissez Fichier › Exporter au format PDF sans mot de passe, puis déposez le nouveau fichier dans Extracto.</dd>
+    <dt>J'ai acheté Extracto Pro sur un autre Mac.</dt>
+    <dd>Extracto › Réglages › Extracto Pro › « Restaurer les achats ».</dd>
+    <dt>Une question ?</dt>
+    <dd>Écrivez-nous à <a href="mailto:support@alifo.app">support@alifo.app</a>. Nous répondons sous deux jours ouvrés.</dd>
+  </dl>
+
+  <h2>En español</h2>
+  <dl>
+    <dt>«Este PDF está protegido con contraseña.»</dt>
+    <dd>Abre el PDF en Vista Previa, introduce la contraseña, elige Archivo › Exportar como PDF sin contraseña y suelta el nuevo archivo en Extracto.</dd>
+    <dt>Compré Extracto Pro en otro Mac.</dt>
+    <dd>Extracto › Ajustes › Extracto Pro › «Restaurar compras».</dd>
+    <dt>¿Alguna pregunta?</dt>
+    <dd>Escríbenos a <a href="mailto:support@alifo.app">support@alifo.app</a>. Respondemos en dos días laborables.</dd>
+  </dl>
+
+  <footer class="site-footer">
+    <p>© 2026 Alifo. All rights reserved. · <a href="/extracto/">Extracto</a> · <a href="/extracto/privacy/">Privacy policy</a></p>
+    <p>This page loads no scripts, no external fonts, and no trackers.</p>
+  </footer>
+</div>
+</body>
+</html>
