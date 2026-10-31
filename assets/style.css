@@ -127,10 +127,13 @@ hr {
 .app-card .name { font-weight: 700; font-size: 19px; }
 .app-card .tag { color: var(--muted); font-size: 15px; margin-top: 2px; }
 
-/* Extracto's card: icon, tagline and a screenshot (only this card; the others are unchanged) */
+/* App cards: icon, name, one-line tagline, then a 16:10 visual (screenshot, or the icon on the app's colours) */
 .app-card-head { display: flex; align-items: center; gap: 14px; }
-.app-card-icon { width: 52px; height: 52px; flex: none; }
-.app-card-shot { display: block; width: 100%; height: auto; margin-top: 16px; border-radius: 10px; }
+.app-card-icon { width: 52px; height: 52px; flex: none; display: block; }
+.app-card-visual { margin-top: 16px; aspect-ratio: 16 / 10; border-radius: 10px; overflow: hidden; }
+.app-card-visual img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.app-card-panel { display: grid; place-items: center; }
+.app-card-panel img { width: 128px; height: 128px; object-fit: contain; }
 
 /* Meta line (dates, contact) */
 .meta { font-size: 14px; color: var(--muted); }
