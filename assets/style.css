@@ -127,6 +127,11 @@ hr {
 .app-card .name { font-weight: 700; font-size: 19px; }
 .app-card .tag { color: var(--muted); font-size: 15px; margin-top: 2px; }
 
+/* Extracto's card: icon, tagline and a screenshot (only this card; the others are unchanged) */
+.app-card-head { display: flex; align-items: center; gap: 14px; }
+.app-card-icon { width: 52px; height: 52px; flex: none; }
+.app-card-shot { display: block; width: 100%; height: auto; margin-top: 16px; border-radius: 10px; }
+
 /* Meta line (dates, contact) */
 .meta { font-size: 14px; color: var(--muted); }
 
