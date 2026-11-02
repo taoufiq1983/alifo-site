@@ -36,7 +36,7 @@ ICON = RESTORA / "Restora" / "Resources" / "Assets.xcassets" / "AppIcon.appicons
 BASE = "https://alifo.app"
 APP_STORE_URL = None            # set when the app is live, e.g. "https://apps.apple.com/app/id0000000000"
 WIDTHS = [640, 1280, 1920]
-NAMES = ["1-compare", "2-oldphoto", "3-detail", "4-batch", "5-drawing", "6-private"]
+NAMES = ["1-print", "2-etsy", "3-oldphoto", "4-detail", "5-batch", "6-private"]
 LANGS = ["en", "fr", "es"]
 PATH = {"en": "/restora/", "fr": "/restora/fr/", "es": "/restora/es/"}
 BADGE_LOCALE = {"en": "en-us", "fr": "fr-fr", "es": "es-es"}
@@ -48,39 +48,40 @@ FORMATS = ["JPEG", "PNG", "HEIC", "TIFF 8/16-bit", "WebP", "GIF", "BMP"]
 T = {
     "en": {
         "title": "Restora — AI photo upscaler for Mac: enlarge and restore photos offline",
-        "description": "Make any photo sharper and bigger, restore old pictures and enlarge whole folders on your Mac. "
-                       "The AI runs on your Mac: nothing is uploaded. ×2 is free.",
+        "description": "Print any photo big and sharp: Print Studio at 300 dpi, Etsy print pack, old photo restoration and "
+                       "batches on your Mac. The AI runs on your Mac: nothing is uploaded. ×2 is free.",
         "nav": ["Features", "Pricing", "FAQ", "Support"],
         "langs_label": "Language",
-        "h1": "Make any photo sharper and bigger. Restore old pictures.",
+        "h1": "Print anything big. Keep it sharp.",
         "promise": "Nothing leaves your Mac.",
         "soon": "Coming soon on the Mac App Store",
         "badge_alt": "Download on the Mac App Store",
-        "hero_alt": "Restora on a Mac comparing a neon sign before and after a ×4 enlargement: soft on the left, "
-                    "crisp on the right.",
-        "stats": ["Up to ×4 and 16,384 px", "Works offline", "Apple silicon & Intel", "One-time purchase"],
+        "hero_alt": "Restora's Print Studio on a Mac: a 1940 poster framed for an 18 × 24 in print at 300 dpi, with "
+                    "the quality rated Good.",
+        "stats": ["Prints up to 24 × 36 in at 300 dpi", "Etsy print pack", "Works offline", "One-time purchase"],
         "features_label": "Features",
         "features": [
-            ("Sharper. Bigger. Instantly.",
-             "Drop a photo: the result appears in a second or two in a before/after comparator. Drag the divider, zoom "
-             "and pan in sync, press Space to see the original. ×2 is free, with no limit.", "Free",
-             "A neon sign in Restora's comparator, the original on the left and the ×4 result on the right."),
+            ("Print it big. Keep it sharp.",
+             "Print Studio turns any photo, poster or drawing into a print file: A4 to A2, Letter, Tabloid, 4×6 to "
+             "24×36 in, 60×90 cm or your own size, at 150, 240 or 300 dpi. Restora computes the enlargement, rates the "
+             "quality (Excellent, Good or Limit) before you print, and lets you drag the crop or add margins.", "Pro",
+             "A 1940 poster in Restora's Print Studio, framed for 18 × 24 in at 300 dpi, quality Good."),
+            ("The Etsy print pack, in one click.",
+             "Five 300 dpi JPEGs for the 2:3, 3:4, 4:5, ISO and 11×14 ratios, clearly named, the resolution written in "
+             "each file, every file under Etsy's 20 MB limit, in one folder.", "Pro",
+             "Restora after exporting an Etsy print pack, next to the five files with their sizes and 300 dpi."),
             ("Bring old photos back.",
              "Old Photo mode cleans the grain of scanned prints and brings back the detail. Restora recognises old "
              "photos, drawings and screenshots and suggests the right mode.", "Pro",
              "A photograph of the Brooklyn Bridge from around 1900, before and after Old Photo mode."),
             ("Up to 4× bigger.",
-             "×4, or the exact size you need up to 16,384 pixels, with presets for 4K and 5K wallpapers, A4 and A3 "
-             "prints at 300 dpi, and Instagram. Shown at 100 %: real detail, not just bigger pixels.", "Pro",
-             "The Walt Disney Concert Hall at 100 % in Restora, before and after ×4."),
+             "×2 is free, in Auto mode, with no watermark. ×4, or the exact size you need up to 16,384 pixels, with "
+             "Restora Pro. Shown at 100 %: real detail, not just bigger pixels.", "Free ×2 · Pro ×4",
+             "A neon sign at 100 % in Restora, before and after ×4: soft on the left, crisp on the right."),
             ("A whole folder in one go.",
-             "Drop a folder: every image is listed with its status and the time left. Export All writes the enlarged "
-             "images into the folder you choose, never over your originals.", "Pro",
+             "Drop a folder, or right-click in the Finder › Services › Upscale with Restora: every image is listed with "
+             "its status and the time left. Your originals are never overwritten.", "Pro",
              "Eight images in Restora's list, two exported, one in progress, with the time left."),
-            ("Drawings stay crisp.",
-             "Drawing mode keeps lines clean and colours flat, for illustrations, posters, comics and line art. "
-             "Screenshot mode keeps text and interfaces sharp.", "Pro",
-             "A 1940 WPA poster enlarged ×4 in Drawing mode, before and after."),
             ("Nothing leaves your Mac.",
              "The AI models are inside the app and run on your Mac's Neural Engine. No account, no upload, no "
              "analytics, and Restora has no network access: it works offline.", "Free",
@@ -98,20 +99,25 @@ T = {
         ],
         "pricing_label": "Pricing",
         "free_name": "Free", "free_price": "Free, with no limit",
-        "free_items": ["×2 enlargement in Photo mode", "One image at a time", "JPEG and PNG export, metadata kept",
-                       "Preview ×4 and every mode on the visible area"],
+        "free_items": ["×2 enlargement in Auto mode, no watermark, no quota", "Before/after comparator, one image at a time",
+                       "JPEG and PNG export, metadata kept", "Preview of every Pro feature on the visible area"],
         "pro_name": "Restora Pro", "pro_price": "One-time purchase on the Mac App Store",
-        "pro_items": ["×4, custom sizes and presets", "Folders and batches", "Old Photo, Drawing and Screenshot modes, "
-                      "adjustable denoising", "HEIC and TIFF, shared with your family (Family Sharing)"],
+        "pro_items": ["Print Studio: print formats at 300 dpi, quality checked", "Etsy print pack in one click",
+                      "Old Photo mode and denoising, ×4 and sizes up to 16,384 px", "Folders and batches, Finder service, "
+                      "HEIC and 16-bit TIFF; shared with your family"],
         "languages_label": "Formats",
         "languages_intro": "Colour profiles, transparency, 16-bit depth and orientation are kept. Interface in English, "
                            "French and Spanish.",
         "faq_label": "FAQ",
         "faq": [
             ("Is Restora free?",
-             "Yes for ×2: enlarge any number of photos ×2 in Photo mode and export them in JPEG or PNG, with no limit and "
-             "no account. Restora Pro, a one-time purchase, unlocks ×4 and custom sizes, batches, the Old Photo, Drawing "
-             "and Screenshot modes, denoising, HEIC and TIFF."),
+             "Yes for ×2: enlarge any number of images ×2 in Auto mode and export them in JPEG or PNG, with no watermark, "
+             "no quota and no account. Restora Pro, a one-time purchase, unlocks Print Studio, the Etsy print pack, Old "
+             "Photo mode and denoising, ×4 and custom sizes, batches, HEIC and TIFF."),
+            ("Will my print be sharp?",
+             "Print Studio tells you before you print. It computes the enlargement the print needs: up to 2× is rated "
+             "Excellent, up to 4× Good, beyond Limit. Lower the size or the resolution (240 or 150 dpi suit posters "
+             "seen from a distance) to improve the rating."),
             ("Are my photos sent anywhere?",
              "No. The enhancement runs on your Mac with models included in the app. Restora has no network access: your "
              "photos never leave your Mac. See the <a href=\"/restora/privacy/\">privacy policy</a>."),
@@ -133,8 +139,8 @@ T = {
              "Purchases are made through Apple, so refunds are too: request one at "
              "<a href=\"https://reportaproblem.apple.com\">reportaproblem.apple.com</a>."),
         ],
-        "final_title": "Sharper, bigger photos, on your Mac.",
-        "final_text": "Enlarge, restore, compare. Nothing leaves your Mac.",
+        "final_title": "Print anything big, and sharp.",
+        "final_text": "Print Studio, Etsy print pack, old photos, batches. Nothing leaves your Mac.",
         "footer": ["Support", "Privacy"],
         "footer_note": "This page loads no scripts, no external fonts and no trackers.",
         "privacy_link": "Privacy",
@@ -145,37 +151,37 @@ T = {
                        "dossiers entiers sur votre Mac. L’IA tourne sur votre Mac : rien n’est envoyé. Le ×2 est gratuit.",
         "nav": ["Fonctions", "Tarifs", "FAQ", "Assistance"],
         "langs_label": "Langue",
-        "h1": "Des photos plus nettes et plus grandes. Les vieux clichés restaurés.",
+        "h1": "Imprimez grand. Gardez la netteté.",
         "promise": "Rien ne quitte votre Mac.",
         "soon": "Bientôt sur le Mac App Store",
         "badge_alt": "Télécharger dans le Mac App Store",
-        "hero_alt": "Restora sur un Mac compare une enseigne lumineuse avant et après un agrandissement ×4 : floue à "
-                    "gauche, nette à droite.",
-        "stats": ["Jusqu’à ×4 et 16 384 px", "Hors ligne", "Puces Apple et Intel", "Achat unique"],
+        "hero_alt": "Le Print Studio de Restora sur un Mac : une affiche de 1940 cadrée pour une impression 18 × 24 "
+                    "pouces à 300 dpi, qualité Bonne.",
+        "stats": ["Jusqu’au 60 × 90 cm à 300 dpi", "Pack d’impression Etsy", "Hors ligne", "Achat unique"],
         "features_label": "Fonctions",
         "features": [
-            ("Plus net. Plus grand. Tout de suite.",
-             "Déposez une photo : le résultat apparaît en une ou deux secondes dans un comparateur avant/après. Faites "
-             "glisser la séparation, zoomez et déplacez en même temps, Espace pour voir l’original. Le ×2 est gratuit, "
-             "sans limite.", "Gratuit",
-             "Une enseigne lumineuse dans le comparateur de Restora, l’original à gauche et le résultat ×4 à droite."),
+            ("Imprimez grand. Gardez la netteté.",
+             "Print Studio transforme une photo, une affiche ou un dessin en fichier d’impression : de l’A4 à l’A2, "
+             "Letter, Tabloid, du 4×6 au 24×36 pouces, 60×90 cm ou votre propre taille, à 150, 240 ou 300 dpi. Restora "
+             "calcule l’agrandissement, note la qualité (Excellente, Bonne ou Limite) avant l’impression et vous laisse "
+             "déplacer le recadrage ou ajouter des marges.", "Pro",
+             "Une affiche de 1940 dans le Print Studio de Restora, cadrée en 18 × 24 pouces à 300 dpi, qualité Bonne."),
+            ("Le pack d’impression Etsy, en un clic.",
+             "Cinq JPEG à 300 dpi aux rapports 2:3, 3:4, 4:5, ISO et 11×14, clairement nommés, la résolution écrite dans "
+             "chaque fichier, chacun sous la limite Etsy de 20 Mo, dans un dossier.", "Pro",
+             "Restora après l’export d’un pack Etsy, à côté des cinq fichiers avec leurs tailles et 300 dpi."),
             ("Redonnez vie aux vieilles photos.",
-             "Le mode Vieille photo nettoie le grain des tirages numérisés et retrouve les détails. Restora reconnaît "
-             "les vieilles photos, les dessins et les captures d’écran et propose le bon mode.", "Pro",
+             "Le mode Vieille photo nettoie le grain des tirages numérisés et retrouve les détails, avec un débruitage "
+             "réglable. Le mode Auto reconnaît photos, dessins et captures d’écran.", "Pro",
              "Une photographie du pont de Brooklyn vers 1900, avant et après le mode Vieille photo."),
             ("Jusqu’à 4× plus grand.",
-             "×4, ou la taille exacte voulue jusqu’à 16 384 pixels, avec des tailles prêtes à l’emploi : fonds d’écran "
-             "4K et 5K, impressions A4 et A3 à 300 dpi, Instagram. Affiché à 100 % : du vrai détail, pas des pixels "
-             "plus gros.", "Pro",
-             "Le Walt Disney Concert Hall à 100 % dans Restora, avant et après ×4."),
+             "Le ×2 est gratuit, en mode Auto, sans filigrane. Le ×4, ou la taille exacte voulue jusqu’à 16 384 pixels, "
+             "avec Restora Pro. Affiché à 100 % : du vrai détail, pas des pixels plus gros.", "Gratuit ×2 · Pro ×4",
+             "Une enseigne lumineuse à 100 % dans Restora, avant et après ×4 : floue à gauche, nette à droite."),
             ("Un dossier entier d’un coup.",
-             "Déposez un dossier : chaque image est listée avec son état et le temps restant. Tout exporter écrit les "
-             "images agrandies dans le dossier choisi, sans jamais écraser vos originaux.", "Pro",
+             "Déposez un dossier, ou faites un clic droit dans le Finder › Services › Agrandir avec Restora : chaque "
+             "image est listée avec son état et le temps restant. Vos originaux ne sont jamais écrasés.", "Pro",
              "Huit images dans la liste de Restora, deux exportées, une en cours, avec le temps restant."),
-            ("Les dessins restent nets.",
-             "Le mode Dessin garde des traits propres et des aplats nets, pour les illustrations, affiches, BD et "
-             "dessins au trait. Le mode Capture d’écran garde le texte et les interfaces bien nets.", "Pro",
-             "Une affiche WPA de 1940 agrandie ×4 en mode Dessin, avant et après."),
             ("Rien ne quitte votre Mac.",
              "Les modèles d’IA sont dans l’app et tournent sur le Neural Engine de votre Mac. Sans compte, sans envoi, "
              "sans mesure d’audience, et Restora n’a pas accès au réseau : il fonctionne hors ligne.", "Gratuit",
@@ -193,20 +199,26 @@ T = {
         ],
         "pricing_label": "Tarifs",
         "free_name": "Gratuit", "free_price": "Gratuit, sans limite",
-        "free_items": ["Agrandissement ×2 en mode Photo", "Une image à la fois", "Export JPEG et PNG, métadonnées conservées",
-                       "Aperçu du ×4 et de chaque mode sur la zone visible"],
+        "free_items": ["Agrandissement ×2 en mode Auto, sans filigrane ni quota", "Comparateur avant/après, une image à la fois",
+                       "Export JPEG et PNG, métadonnées conservées", "Aperçu de chaque fonction Pro sur la zone visible"],
         "pro_name": "Restora Pro", "pro_price": "Achat unique sur le Mac App Store",
-        "pro_items": ["×4, tailles sur mesure et prêtes à l’emploi", "Dossiers et lots", "Modes Vieille photo, Dessin et "
-                      "Capture d’écran, débruitage réglable", "HEIC et TIFF, partagé en famille (Partage familial)"],
+        "pro_items": ["Print Studio : formats d’impression à 300 dpi, qualité vérifiée", "Pack d’impression Etsy en un clic",
+                      "Mode Vieille photo et débruitage, ×4 et tailles jusqu’à 16 384 px", "Dossiers et lots, service du Finder, "
+                      "HEIC et TIFF 16 bits ; partagé en famille"],
         "languages_label": "Formats",
         "languages_intro": "Profils couleur, transparence, 16 bits et orientation conservés. Interface en anglais, "
                            "français et espagnol.",
         "faq_label": "FAQ",
         "faq": [
             ("Restora est-il gratuit ?",
-             "Oui pour le ×2 : agrandissez autant de photos que vous voulez ×2 en mode Photo et exportez-les en JPEG ou "
-             "PNG, sans limite et sans compte. Restora Pro, un achat unique, débloque le ×4 et les tailles sur mesure, "
-             "les lots, les modes Vieille photo, Dessin et Capture d’écran, le débruitage, le HEIC et le TIFF."),
+             "Oui pour le ×2 : agrandissez autant d’images que vous voulez ×2 en mode Auto et exportez-les en JPEG ou "
+             "PNG, sans filigrane, sans quota et sans compte. Restora Pro, un achat unique, débloque Print Studio, le "
+             "pack d’impression Etsy, le mode Vieille photo et le débruitage, le ×4 et les tailles sur mesure, les lots, "
+             "le HEIC et le TIFF."),
+            ("Mon impression sera-t-elle nette ?",
+             "Print Studio vous le dit avant d’imprimer. Il calcule l’agrandissement nécessaire : jusqu’à 2× c’est "
+             "Excellent, jusqu’à 4× Bon, au-delà Limite. Réduisez la taille ou la résolution (240 ou 150 dpi conviennent "
+             "aux affiches vues de loin) pour améliorer la note."),
             ("Mes photos sont-elles envoyées quelque part ?",
              "Non. L’amélioration se fait sur votre Mac avec des modèles inclus dans l’app. Restora n’a pas accès au "
              "réseau : vos photos ne quittent jamais votre Mac. Voir la <a href=\"/restora/privacy/#fr\">politique de "
@@ -231,8 +243,8 @@ T = {
              "Les achats passent par Apple, les remboursements aussi : demandez-le sur "
              "<a href=\"https://reportaproblem.apple.com\">reportaproblem.apple.com</a>."),
         ],
-        "final_title": "Des photos plus nettes et plus grandes, sur votre Mac.",
-        "final_text": "Agrandir, restaurer, comparer. Rien ne quitte votre Mac.",
+        "final_title": "Imprimez tout en grand, et net.",
+        "final_text": "Print Studio, pack Etsy, vieilles photos, lots. Rien ne quitte votre Mac.",
         "footer": ["Assistance", "Confidentialité"],
         "footer_note": "Cette page ne charge ni script, ni police externe, ni traceur.",
         "privacy_link": "Confidentialité",
@@ -243,36 +255,37 @@ T = {
                        "La IA funciona en tu Mac: nada se sube. El ×2 es gratis.",
         "nav": ["Funciones", "Precios", "Preguntas", "Soporte"],
         "langs_label": "Idioma",
-        "h1": "Fotos más nítidas y más grandes. Fotos antiguas restauradas.",
+        "h1": "Imprime en grande. Siempre nítido.",
         "promise": "Nada sale de tu Mac.",
         "soon": "Muy pronto en el Mac App Store",
         "badge_alt": "Descargar en el Mac App Store",
-        "hero_alt": "Restora en un Mac compara un letrero de neón antes y después de ampliarlo ×4: borroso a la "
-                    "izquierda, nítido a la derecha.",
-        "stats": ["Hasta ×4 y 16.384 px", "Sin conexión", "Chips de Apple e Intel", "Compra única"],
+        "hero_alt": "El Print Studio de Restora en un Mac: un cartel de 1940 encuadrado para imprimir a 18 × 24 "
+                    "pulgadas a 300 ppp, calidad Buena.",
+        "stats": ["Hasta 60 × 90 cm a 300 ppp", "Pack de impresión Etsy", "Sin conexión", "Compra única"],
         "features_label": "Funciones",
         "features": [
-            ("Más nítida. Más grande. Al instante.",
-             "Suelta una foto: el resultado aparece en uno o dos segundos en un comparador antes/después. Arrastra la "
-             "separación, haz zoom y desplázate a la vez, Espacio para ver el original. El ×2 es gratis, sin límite.",
-             "Gratis",
-             "Un letrero de neón en el comparador de Restora, el original a la izquierda y el resultado ×4 a la derecha."),
+            ("Imprime en grande. Siempre nítido.",
+             "Print Studio convierte una foto, un cartel o un dibujo en un archivo de impresión: de A4 a A2, Letter, "
+             "Tabloid, de 4×6 a 24×36 pulgadas, 60×90 cm o tu propio tamaño, a 150, 240 o 300 ppp. Restora calcula la "
+             "ampliación, califica la calidad (Excelente, Buena o Límite) antes de imprimir y te deja mover el recorte "
+             "o añadir márgenes.", "Pro",
+             "Un cartel de 1940 en el Print Studio de Restora, encuadrado a 18 × 24 pulgadas a 300 ppp, calidad Buena."),
+            ("El pack de impresión Etsy, en un clic.",
+             "Cinco JPEG a 300 ppp en las proporciones 2:3, 3:4, 4:5, ISO y 11×14, con nombres claros, la resolución "
+             "escrita en cada archivo, todos por debajo del límite de 20 MB de Etsy, en una carpeta.", "Pro",
+             "Restora tras exportar un pack Etsy, junto a los cinco archivos con sus tamaños y 300 ppp."),
             ("Devuelve la vida a tus fotos antiguas.",
-             "El modo Foto antigua limpia el grano de las copias escaneadas y recupera los detalles. Restora reconoce "
-             "las fotos antiguas, los dibujos y las capturas de pantalla y propone el modo adecuado.", "Pro",
+             "El modo Foto antigua limpia el grano de las copias escaneadas y recupera los detalles, con reducción de "
+             "ruido ajustable. El modo Auto reconoce fotos, dibujos y capturas de pantalla.", "Pro",
              "Una fotografía del puente de Brooklyn hacia 1900, antes y después del modo Foto antigua."),
             ("Hasta 4× más grande.",
-             "×4, o el tamaño exacto que necesitas hasta 16.384 píxeles, con tamaños predefinidos: fondos de pantalla "
-             "4K y 5K, impresiones A4 y A3 a 300 ppp, Instagram. Al 100 %: detalle real, no solo píxeles más grandes.",
-             "Pro", "El Walt Disney Concert Hall al 100 % en Restora, antes y después de ×4."),
+             "El ×2 es gratis, en modo Auto, sin marca de agua. El ×4, o el tamaño exacto que necesites hasta 16.384 "
+             "píxeles, con Restora Pro. Al 100 %: detalle real, no solo píxeles más grandes.", "Gratis ×2 · Pro ×4",
+             "Un letrero de neón al 100 % en Restora, antes y después de ×4: borroso a la izquierda, nítido a la derecha."),
             ("Una carpeta entera de una vez.",
-             "Suelta una carpeta: cada imagen aparece en la lista con su estado y el tiempo restante. Exportar todo "
-             "guarda las imágenes ampliadas en la carpeta que elijas, sin sobrescribir nunca tus originales.", "Pro",
+             "Suelta una carpeta, o haz clic derecho en el Finder › Servicios › Ampliar con Restora: cada imagen aparece "
+             "con su estado y el tiempo restante. Tus originales nunca se sobrescriben.", "Pro",
              "Ocho imágenes en la lista de Restora, dos exportadas, una en curso, con el tiempo restante."),
-            ("Los dibujos siguen nítidos.",
-             "El modo Dibujo mantiene líneas limpias y colores planos, para ilustraciones, carteles, cómics y dibujos de "
-             "línea. El modo Captura de pantalla mantiene nítidos el texto y las interfaces.", "Pro",
-             "Un cartel de la WPA de 1940 ampliado ×4 en modo Dibujo, antes y después."),
             ("Nada sale de tu Mac.",
              "Los modelos de IA están dentro de la app y funcionan en el Neural Engine de tu Mac. Sin cuenta, sin "
              "subidas, sin analítica, y Restora no tiene acceso a la red: funciona sin conexión.", "Gratis",
@@ -290,20 +303,26 @@ T = {
         ],
         "pricing_label": "Precios",
         "free_name": "Gratis", "free_price": "Gratis, sin límite",
-        "free_items": ["Ampliación ×2 en modo Foto", "Una imagen cada vez", "Exportación JPEG y PNG, con los metadatos",
-                       "Vista previa del ×4 y de cada modo en la zona visible"],
+        "free_items": ["Ampliación ×2 en modo Auto, sin marca de agua ni cupos", "Comparador antes/después, una imagen cada vez",
+                       "Exportación JPEG y PNG, con los metadatos", "Vista previa de cada función Pro en la zona visible"],
         "pro_name": "Restora Pro", "pro_price": "Compra única en el Mac App Store",
-        "pro_items": ["×4, tamaños a medida y predefinidos", "Carpetas y lotes", "Modos Foto antigua, Dibujo y Captura "
-                      "de pantalla, reducción de ruido ajustable", "HEIC y TIFF, compartido en familia (En familia)"],
+        "pro_items": ["Print Studio: formatos de impresión a 300 ppp, calidad comprobada", "Pack de impresión Etsy en un clic",
+                      "Modo Foto antigua y reducción de ruido, ×4 y tamaños de hasta 16.384 px", "Carpetas y lotes, servicio del "
+                      "Finder, HEIC y TIFF de 16 bits; compartido en familia"],
         "languages_label": "Formatos",
         "languages_intro": "Se conservan los perfiles de color, la transparencia, los 16 bits y la orientación. Interfaz "
                            "en inglés, francés y español.",
         "faq_label": "Preguntas",
         "faq": [
             ("¿Restora es gratis?",
-             "Sí para el ×2: amplía todas las fotos que quieras ×2 en modo Foto y expórtalas en JPEG o PNG, sin límite y "
-             "sin cuenta. Restora Pro, una compra única, desbloquea el ×4 y los tamaños a medida, los lotes, los modos "
-             "Foto antigua, Dibujo y Captura de pantalla, la reducción de ruido, HEIC y TIFF."),
+             "Sí para el ×2: amplía todas las imágenes que quieras ×2 en modo Auto y expórtalas en JPEG o PNG, sin marca "
+             "de agua, sin cupos y sin cuenta. Restora Pro, una compra única, desbloquea Print Studio, el pack de "
+             "impresión Etsy, el modo Foto antigua y la reducción de ruido, el ×4 y los tamaños a medida, los lotes, HEIC "
+             "y TIFF."),
+            ("¿Mi impresión será nítida?",
+             "Print Studio te lo dice antes de imprimir. Calcula la ampliación necesaria: hasta 2× es Excelente, hasta "
+             "4× Buena, más allá Límite. Reduce el tamaño o la resolución (240 o 150 ppp sirven para carteles vistos de "
+             "lejos) para mejorar la calificación."),
             ("¿Se envían mis fotos a algún sitio?",
              "No. La mejora se hace en tu Mac con modelos incluidos en la app. Restora no tiene acceso a la red: tus "
              "fotos nunca salen de tu Mac. Consulta la <a href=\"/restora/privacy/#es\">política de privacidad</a>."),
@@ -326,8 +345,8 @@ T = {
              "Las compras se hacen a través de Apple, y los reembolsos también: solicítalo en "
              "<a href=\"https://reportaproblem.apple.com\">reportaproblem.apple.com</a>."),
         ],
-        "final_title": "Fotos más nítidas y más grandes, en tu Mac.",
-        "final_text": "Amplía, restaura, compara. Nada sale de tu Mac.",
+        "final_title": "Imprime lo que quieras en grande, y nítido.",
+        "final_text": "Print Studio, pack Etsy, fotos antiguas, lotes. Nada sale de tu Mac.",
         "footer": ["Soporte", "Privacidad"],
         "footer_note": "Esta página no carga scripts, ni fuentes externas, ni rastreadores.",
         "privacy_link": "Privacidad",
@@ -346,7 +365,7 @@ SUPPORT = ("Restora Support", "Help for Restora, the AI photo upscaler for Mac: 
     <dt>A whole folder</dt>
     <dd>Drop a folder (Restora Pro). Every image is listed; Export All, at the bottom of the list, writes them into the folder you choose.</dd>
     <dt>From the Finder</dt>
-    <dd>Select images, right-click › Services › Enlarge with Restora. If the item is missing, enable it in System Settings › Keyboard › Keyboard Shortcuts › Services.</dd>
+    <dd>Select images, right-click › Services › Upscale with Restora. If the item is missing, enable it in System Settings › Keyboard › Keyboard Shortcuts › Services.</dd>
   </dl>
 
   <h2>Common questions</h2>
@@ -613,7 +632,7 @@ def make_images():
 
 def og(lang):
     """1200 × 630 share image from the "Sharper. Bigger. Instantly." screenshot, on its own background colours."""
-    shot = Image.open(SHOTS / f"mac-{lang}" / "1-compare.png").convert("RGB")
+    shot = Image.open(SHOTS / f"mac-{lang}" / "1-print.png").convert("RGB")
     h = 630
     w = round(shot.width * h / shot.height)
     small = shot.resize((w, h), Image.LANCZOS)
@@ -724,7 +743,7 @@ def page(lang):
     out = [head(lang, t["title"], t["description"], PATH[lang]), json_ld(lang), "</head>\n<body>\n", header(lang, lang)]
     out.append('<main id="main">\n')
     out.append(f'<div class="hero"><div class="container"><h1>{esc(t["h1"])}</h1><p class="promise">{esc(t["promise"])}</p>'
-               f'{store_cta(lang)}{picture(f"shots/{lang}/1-compare", t["hero_alt"], sizes_hero, eager=True)}</div></div>\n')
+               f'{store_cta(lang)}{picture(f"shots/{lang}/1-print", t["hero_alt"], sizes_hero, eager=True)}</div></div>\n')
     out.append('<div class="stats"><ul>' + "".join(f"<li>{esc(s)}</li>" for s in t["stats"]) + "</ul></div>\n")
     out.append(f'<section id="features"><div class="container"><p class="eyebrow">{esc(t["features_label"])}</p>')
     for i, (title, body, tag, alt) in enumerate(t["features"]):

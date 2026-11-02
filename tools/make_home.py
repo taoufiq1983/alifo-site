@@ -42,9 +42,9 @@ APPS = [
     ("extracto", "Extracto", "Text, tables and data from any PDF or image, on your Mac.",
      EXTRACTO / "Extracto/Resources/Assets.xcassets/AppIcon.appiconset/icon_512x512@2x.png",
      EXTRACTO / "captures/appstore/mac-en/1-tables.png", None),
-    ("restora", "Restora", "Sharper, bigger photos and old pictures restored, on your Mac.",
+    ("restora", "Restora", "Print any photo big and sharp, with an Etsy print pack, on your Mac.",
      DEV / "Restora/Restora/Resources/Assets.xcassets/AppIcon.appiconset/icon_512x512@2x.png",
-     DEV / "Restora/captures/appstore/mac-en/1-compare.png", None),
+     DEV / "Restora/captures/appstore/mac-en/1-print.png", None),
     ("keytoons", "KeyToons", "Fun keyboard sounds for your Mac.",
      DEV / "KeyToons/Resources/Assets.xcassets/AppIcon.appiconset/icon_512x512@2x.png",
      KEYTOONS_SHOT if KEYTOONS_SHOT.exists() else None, ("#2c3a5c", "#12161d")),
@@ -52,7 +52,7 @@ APPS = [
 SHOT_ALT = {
     "alwah": "Alwah on a Mac: today's memorization session, with recent, new and old words to recite.",
     "extracto": "Extracto on a Mac: a table read from a PDF and the Excel file it wrote.",
-    "restora": "Restora on a Mac: a neon sign before and after a ×4 enlargement, soft on the left, crisp on the right.",
+    "restora": "Restora's Print Studio on a Mac: a 1940 poster framed for an 18 × 24 in print at 300 dpi, quality Good.",
     "keytoons": "KeyToons' menu on a Mac, with the Duck theme selected: every key goes quack.",
 }
 
