@@ -52,7 +52,7 @@ APPS = [
 SHOT_ALT = {
     "alwah": "Alwah on a Mac: today's memorization session, with recent, new and old words to recite.",
     "extracto": "Extracto on a Mac: a table read from a PDF and the Excel file it wrote.",
-    "grandio": "Grandio's Print Studio on a Mac: a 1940 poster framed for an 18 × 24 in print at 300 dpi, quality Good.",
+    "grandio": "Grandio's Print Studio on a Mac: a 1940 poster framed for an 18 × 24 in print at 300 dpi, quality Good, with a before/after loupe at 100 %.",
     "keytoons": "KeyToons' menu on a Mac, with the Duck theme selected: every key goes quack.",
 }
 

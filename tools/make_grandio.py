@@ -57,7 +57,7 @@ T = {
         "soon": "Coming soon on the Mac App Store",
         "badge_alt": "Download on the Mac App Store",
         "hero_alt": "Grandio's Print Studio on a Mac: a 1940 poster framed for an 18 × 24 in print at 300 dpi, with "
-                    "the quality rated Good.",
+                    "the quality rated Good, and a loupe comparing the lettering before and after at 100 %.",
         "stats": ["Prints up to 24 × 36 in at 300 dpi", "Etsy print pack", "Works offline", "One-time purchase"],
         "features_label": "Features",
         "features": [
@@ -65,7 +65,7 @@ T = {
              "Print Studio turns any photo, poster or drawing into a print file: A4 to A2, Letter, Tabloid, 4×6 to "
              "24×36 in, 60×90 cm or your own size, at 150, 240 or 300 dpi. Grandio computes the enlargement, rates the "
              "quality (Excellent, Good or Limit) before you print, and lets you drag the crop or add margins.", "Pro",
-             "A 1940 poster in Grandio's Print Studio, framed for 18 × 24 in at 300 dpi, quality Good."),
+             "A 1940 poster in Grandio's Print Studio, framed for 18 × 24 in at 300 dpi, quality Good; the loupe shows the lettering at 100 %, blurry before, crisp after."),
             ("The Etsy print pack, in one click.",
              "Five 300 dpi JPEGs for the 2:3, 3:4, 4:5, ISO and 11×14 ratios, clearly named, the resolution written in "
              "each file, every file under Etsy's 20 MB limit, in one folder.", "Pro",
@@ -156,7 +156,7 @@ T = {
         "soon": "Bientôt sur le Mac App Store",
         "badge_alt": "Télécharger dans le Mac App Store",
         "hero_alt": "Le Print Studio de Grandio sur un Mac : une affiche de 1940 cadrée pour une impression 18 × 24 "
-                    "pouces à 300 dpi, qualité Bonne.",
+                    "pouces à 300 dpi, qualité Bonne, et une loupe qui compare le lettrage avant et après à 100 %.",
         "stats": ["Jusqu’au 60 × 90 cm à 300 dpi", "Pack d’impression Etsy", "Hors ligne", "Achat unique"],
         "features_label": "Fonctions",
         "features": [
@@ -165,7 +165,7 @@ T = {
              "Letter, Tabloid, du 4×6 au 24×36 pouces, 60×90 cm ou votre propre taille, à 150, 240 ou 300 dpi. Grandio "
              "calcule l’agrandissement, note la qualité (Excellente, Bonne ou Limite) avant l’impression et vous laisse "
              "déplacer le recadrage ou ajouter des marges.", "Pro",
-             "Une affiche de 1940 dans le Print Studio de Grandio, cadrée en 18 × 24 pouces à 300 dpi, qualité Bonne."),
+             "Une affiche de 1940 dans le Print Studio de Grandio, cadrée en 18 × 24 pouces à 300 dpi, qualité Bonne ; la loupe montre le lettrage à 100 %, flou avant, net après."),
             ("Le pack d’impression Etsy, en un clic.",
              "Cinq JPEG à 300 dpi aux rapports 2:3, 3:4, 4:5, ISO et 11×14, clairement nommés, la résolution écrite dans "
              "chaque fichier, chacun sous la limite Etsy de 20 Mo, dans un dossier.", "Pro",
@@ -260,7 +260,7 @@ T = {
         "soon": "Muy pronto en el Mac App Store",
         "badge_alt": "Descargar en el Mac App Store",
         "hero_alt": "El Print Studio de Grandio en un Mac: un cartel de 1940 encuadrado para imprimir a 18 × 24 "
-                    "pulgadas a 300 ppp, calidad Buena.",
+                    "pulgadas a 300 ppp, calidad Buena, y una lupa que compara las letras antes y después al 100 %.",
         "stats": ["Hasta 60 × 90 cm a 300 ppp", "Pack de impresión Etsy", "Sin conexión", "Compra única"],
         "features_label": "Funciones",
         "features": [
@@ -269,7 +269,7 @@ T = {
              "Tabloid, de 4×6 a 24×36 pulgadas, 60×90 cm o tu propio tamaño, a 150, 240 o 300 ppp. Grandio calcula la "
              "ampliación, califica la calidad (Excelente, Buena o Límite) antes de imprimir y te deja mover el recorte "
              "o añadir márgenes.", "Pro",
-             "Un cartel de 1940 en el Print Studio de Grandio, encuadrado a 18 × 24 pulgadas a 300 ppp, calidad Buena."),
+             "Un cartel de 1940 en el Print Studio de Grandio, encuadrado a 18 × 24 pulgadas a 300 ppp, calidad Buena; la lupa muestra las letras al 100 %, borrosas antes y nítidas después."),
             ("El pack de impresión Etsy, en un clic.",
              "Cinco JPEG a 300 ppp en las proporciones 2:3, 3:4, 4:5, ISO y 11×14, con nombres claros, la resolución "
              "escrita en cada archivo, todos por debajo del límite de 20 MB de Etsy, en una carpeta.", "Pro",
