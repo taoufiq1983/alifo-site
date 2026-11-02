@@ -59,11 +59,11 @@ No personal path in the published files: `cd ~/Downloads/alifo-site && grep -rl 
 
 Regenerate Extracto's pages after new screenshots with `tools/make_site.py`.
 
-| `/restora/`, `/restora/fr/`, `/restora/es/`, `/restora/support/`, `/restora/privacy/` | `tools/make_restora.py` (derived from `make_site.py`, same template; texts in its `T`, `SUPPORT`, `PRIVACY`; images from `~/Developer/Restora/captures/appstore`) |
+| `/grandio/`, `/grandio/fr/`, `/grandio/es/`, `/grandio/support/`, `/grandio/privacy/` | `tools/make_grandio.py` (derived from `make_site.py`, same template; texts in its `T`, `SUPPORT`, `PRIVACY`; images from `~/Developer/Restora/captures/appstore`) |
 
-Order after a change to Restora: `tools/make_restora.py`, then `tools/make_site.py` (it writes `sitemap.xml` and lists
-Restora's pages, with their hreflang alternates, once they exist), then `tools/make_home.py` (Restora's card).
-Link check (offline, files): `python3 ~/Developer/Restora/Tools/check_site.py ~/Downloads/alifo-site restora extracto`
+Order after a change to Grandio (the app formerly named Restora; its repository is still ~/Developer/Restora): `tools/make_grandio.py`, then `tools/make_site.py` (it writes `sitemap.xml` and lists
+Grandio's pages, with their hreflang alternates, once they exist), then `tools/make_home.py` (Grandio's card).
+Link check (offline, files): `python3 ~/Developer/Restora/Tools/check_site.py ~/Downloads/alifo-site grandio extracto`
 (2026-11-02: 11 pages, 565 references, 0 errors).
 
 ### Homepage cards (`tools/make_home.py`)
