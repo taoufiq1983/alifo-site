@@ -687,10 +687,16 @@ def rewrap(path, own_path):
 def sitemap():
     urls = ["/", "/aftershot/", "/aftershot/support/", "/aftershot/privacy/", "/alwah/", "/alwah/support/",
             "/alwah/privacy/", "/keytoons/", "/keytoons/support/", "/keytoons/privacy/",
-            "/extracto/support/", "/extracto/privacy/"]
+            "/extracto/support/", "/extracto/privacy/", "/restora/support/", "/restora/privacy/"]
     alt = "".join(f'<xhtml:link rel="alternate" hreflang="{l}" href="{BASE}{PATH[l]}"/>' for l in LANGS)
     alt += f'<xhtml:link rel="alternate" hreflang="x-default" href="{BASE}{PATH["en"]}"/>'
     rows = [f"<url><loc>{BASE}{PATH[l]}</loc><lastmod>{LASTMOD}</lastmod>{alt}</url>" for l in LANGS]
+    # Restora's three language pages (tools/make_restora.py), with their own alternates, once generated.
+    restora = {"en": "/restora/", "fr": "/restora/fr/", "es": "/restora/es/"}
+    if all((SITE / p.strip("/") / "index.html").exists() for p in restora.values()):
+        ralt = "".join(f'<xhtml:link rel="alternate" hreflang="{l}" href="{BASE}{restora[l]}"/>' for l in LANGS)
+        ralt += f'<xhtml:link rel="alternate" hreflang="x-default" href="{BASE}{restora["en"]}"/>'
+        rows += [f"<url><loc>{BASE}{restora[l]}</loc><lastmod>2026-11-02</lastmod>{ralt}</url>" for l in LANGS]
     rows += [f"<url><loc>{BASE}{u}</loc></url>" for u in urls if (SITE / u.strip("/") / "index.html").exists() or u == "/"]
     (SITE / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '

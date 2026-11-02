@@ -59,6 +59,13 @@ No personal path in the published files: `cd ~/Downloads/alifo-site && grep -rl 
 
 Regenerate Extracto's pages after new screenshots with `tools/make_site.py`.
 
+| `/restora/`, `/restora/fr/`, `/restora/es/`, `/restora/support/`, `/restora/privacy/` | `tools/make_restora.py` (derived from `make_site.py`, same template; texts in its `T`, `SUPPORT`, `PRIVACY`; images from `~/Developer/Restora/captures/appstore`) |
+
+Order after a change to Restora: `tools/make_restora.py`, then `tools/make_site.py` (it writes `sitemap.xml` and lists
+Restora's pages, with their hreflang alternates, once they exist), then `tools/make_home.py` (Restora's card).
+Link check (offline, files): `python3 ~/Developer/Restora/Tools/check_site.py ~/Downloads/alifo-site restora extracto`
+(2026-11-02: 11 pages, 565 references, 0 errors).
+
 ### Homepage cards (`tools/make_home.py`)
 
 Each card has the app's icon, its name, a one-line tagline and a 16:10 visual. Styles: `.app-card-*` in
