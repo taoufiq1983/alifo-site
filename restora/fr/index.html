@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Restora — agrandir et restaurer vos photos sur Mac avec l’IA, hors ligne</title>
+<meta name="description" content="Rendez vos photos plus nettes et plus grandes, restaurez les vieux clichés et agrandissez des dossiers entiers sur votre Mac. L’IA tourne sur votre Mac : rien n’est envoyé. Le ×2 est gratuit.">
+<link rel="canonical" href="https://alifo.app/restora/fr/">
+<link rel="alternate" hreflang="en" href="https://alifo.app/restora/">
+<link rel="alternate" hreflang="fr" href="https://alifo.app/restora/fr/">
+<link rel="alternate" hreflang="es" href="https://alifo.app/restora/es/">
+<link rel="alternate" hreflang="x-default" href="https://alifo.app/restora/">
+<link rel="icon" type="image/png" href="/restora/img/icon-64.png">
+<link rel="apple-touch-icon" href="/restora/img/icon-256.png">
+<meta name="theme-color" content="#2c1a28">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Alifo">
+<meta property="og:title" content="Restora — agrandir et restaurer vos photos sur Mac avec l’IA, hors ligne">
+<meta property="og:description" content="Rendez vos photos plus nettes et plus grandes, restaurez les vieux clichés et agrandissez des dossiers entiers sur votre Mac. L’IA tourne sur votre Mac : rien n’est envoyé. Le ×2 est gratuit.">
+<meta property="og:url" content="https://alifo.app/restora/fr/">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:image" content="https://alifo.app/restora/img/og-fr.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Restora sur un Mac compare une enseigne lumineuse avant et après un agrandissement ×4 : floue à gauche, nette à droite.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Restora — agrandir et restaurer vos photos sur Mac avec l’IA, hors ligne">
+<meta name="twitter:description" content="Rendez vos photos plus nettes et plus grandes, restaurez les vieux clichés et agrandissez des dossiers entiers sur votre Mac. L’IA tourne sur votre Mac : rien n’est envoyé. Le ×2 est gratuit.">
+<meta name="twitter:image" content="https://alifo.app/restora/img/og-fr.png">
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #fbf7f3; --surface: #ffffff; --surface-2: #f4ebe5; --ink: #2a1712; --muted: #6a4f45; --line: #ead9cf;
+  --accent: #c2410c; --accent-ink: #b23a0b; --on-accent: #ffffff;
+  --hero-1: #2c1a28; --hero-2: #100e1a; --hero-ink: #ffffff; --hero-muted: #d6c4ce;
+  --shadow: 0 18px 50px rgba(44, 20, 12, .20), 0 2px 8px rgba(44, 20, 12, .10);
+  --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #120d14; --surface: #1c151d; --surface-2: #241a24; --ink: #f4ece8; --muted: #c4b2ae; --line: #33262f;
+    --accent-ink: #ff9a62; --on-accent: #2a1208;
+    --shadow: 0 18px 50px rgba(0, 0, 0, .55), 0 2px 8px rgba(0, 0, 0, .35);
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 var(--sans); }
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--accent-ink); }
+.container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 16px; top: 12px; background: var(--surface); padding: 8px 12px; border-radius: 8px; z-index: 2; }
+
+/* Header */
+.site-header { background: var(--hero-1); color: var(--hero-ink); }
+.site-header .container { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; padding-top: 14px; padding-bottom: 14px; }
+.brand { display: flex; align-items: center; gap: 10px; color: var(--hero-ink); text-decoration: none; font-weight: 700; font-size: 19px; }
+.brand img { width: 34px; height: 34px; }
+.nav { display: flex; gap: 20px; margin-left: auto; font-size: 15px; }
+.nav a, .langs a { color: var(--hero-muted); text-decoration: none; }
+.nav a:hover, .langs a:hover, .nav a:focus-visible, .langs a:focus-visible { color: var(--hero-ink); }
+.langs { display: flex; gap: 2px; font-size: 14px; border: 1px solid rgba(255,255,255,.22); border-radius: 999px; padding: 3px; }
+.langs a { padding: 2px 10px; border-radius: 999px; }
+.langs a[aria-current="true"] { background: rgba(255,255,255,.16); color: var(--hero-ink); }
+
+/* Hero */
+.hero { background: linear-gradient(170deg, var(--hero-1) 0%, var(--hero-2) 100%); color: var(--hero-ink); text-align: center; padding: 56px 0 0; overflow: hidden; }
+.hero h1 { font-size: clamp(34px, 5.2vw, 62px); line-height: 1.07; letter-spacing: -.025em; font-weight: 750; margin: 0 auto 14px; max-width: 19ch; text-wrap: balance; }
+.hero .promise { font-size: clamp(19px, 2.2vw, 25px); color: var(--hero-muted); margin: 0 0 30px; }
+.store { display: flex; justify-content: center; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 44px; }
+.store .badge img { height: 54px; width: auto; }
+.soon { display: inline-block; border: 1px solid rgba(255,255,255,.35); border-radius: 12px; padding: 12px 20px; font-weight: 600; font-size: 17px; color: var(--hero-ink); }
+.hero picture img { margin: 0 auto; border-radius: 14px 14px 0 0; box-shadow: 0 -10px 60px rgba(0,0,0,.35); width: min(1100px, 100%); }
+
+/* Stats */
+.stats { background: var(--surface); border-bottom: 1px solid var(--line); }
+.stats ul { list-style: none; margin: 0 auto; padding: 22px 24px; max-width: 1180px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; text-align: center; }
+.stats li { font-weight: 650; font-size: 18px; }
+.stats li + li { border-left: 1px solid var(--line); }
+
+/* Sections */
+section { padding: 84px 0; }
+.eyebrow { font-size: 14px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent-ink); margin: 0 0 10px; }
+h2 { font-size: clamp(28px, 3.4vw, 42px); line-height: 1.12; letter-spacing: -.02em; margin: 0 0 16px; }
+.intro { color: var(--muted); font-size: 19px; max-width: 62ch; margin: 0 0 36px; }
+.feature { display: grid; grid-template-columns: 1.45fr 1fr; gap: 56px; align-items: center; padding: 44px 0; }
+.feature.flip picture { order: 2; }
+.feature picture img { border-radius: 14px; box-shadow: var(--shadow); }
+.feature h3 { font-size: clamp(24px, 2.6vw, 34px); line-height: 1.15; letter-spacing: -.015em; margin: 0 0 12px; }
+.feature p { color: var(--muted); margin: 0 0 14px; }
+.tag { display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: .04em; border-radius: 999px; padding: 3px 11px; background: var(--surface-2); color: var(--accent-ink); }
+.alt-bg { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+/* Comparison */
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; min-width: 560px; }
+th, td { text-align: left; padding: 15px 18px; border-bottom: 1px solid var(--line); vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+thead th { font-size: 15px; color: var(--muted); }
+td.yes { color: var(--accent-ink); font-weight: 650; }
+td.no { color: var(--muted); }
+
+/* Pricing */
+.plans { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.plan { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 30px 30px 26px; }
+.plan.pro { border: 2px solid var(--accent); }
+.plan h3 { margin: 0; font-size: 24px; }
+.plan .price { color: var(--muted); margin: 4px 0 18px; font-weight: 600; }
+.plan ul { margin: 0; padding: 0; list-style: none; }
+.plan li { padding: 8px 0 8px 30px; position: relative; border-top: 1px solid var(--line); }
+.plan li::before { content: ""; position: absolute; left: 4px; top: 15px; width: 12px; height: 7px; border-left: 2.5px solid var(--accent); border-bottom: 2.5px solid var(--accent); transform: rotate(-45deg); }
+
+/* Languages */
+.pills { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; margin: 0; }
+.pills li { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 6px 16px; font-size: 17px; }
+
+/* FAQ */
+.faq details { border-bottom: 1px solid var(--line); padding: 4px 0; }
+.faq summary { cursor: pointer; font-weight: 650; font-size: 19px; padding: 14px 0; list-style-position: outside; }
+.faq details p { color: var(--muted); margin: 0 0 18px; max-width: 70ch; }
+
+/* Final call */
+.final { background: linear-gradient(170deg, var(--hero-1) 0%, var(--hero-2) 100%); color: var(--hero-ink); text-align: center; }
+.final h2 { max-width: 22ch; margin: 0 auto 12px; }
+.final p { color: var(--hero-muted); font-size: 20px; margin: 0 0 30px; }
+.final .store { margin-bottom: 0; }
+
+/* Footer */
+.site-footer { padding: 30px 0 44px; color: var(--muted); font-size: 14.5px; }
+.site-footer .container { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.site-footer a { color: var(--muted); }
+.site-footer .note { flex-basis: 100%; font-size: 13px; }
+
+/* Support and privacy pages */
+.doc { max-width: 760px; margin: 0 auto; padding: 54px 24px 20px; }
+.doc h1 { font-size: clamp(32px, 4vw, 44px); letter-spacing: -.02em; line-height: 1.1; margin: 0 0 10px; }
+.doc .lede { font-size: 20px; color: var(--muted); margin: 0 0 28px; }
+.doc h2 { font-size: 14px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent-ink); margin: 42px 0 12px; }
+.doc p, .doc dd { color: var(--muted); }
+.doc dt { font-weight: 650; margin-top: 22px; }
+.doc dd { margin: 6px 0 0; }
+.contact { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 20px 22px; margin-bottom: 36px; }
+.contact .label { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-ink); margin-bottom: 6px; }
+.contact a { font-size: 19px; font-weight: 600; text-decoration: none; }
+.contact .meta { font-size: 14px; color: var(--muted); margin-top: 6px; }
+
+@media (max-width: 900px) {
+  .feature { grid-template-columns: 1fr; gap: 26px; padding: 30px 0; }
+  .feature.flip picture { order: 0; }
+  .plans { grid-template-columns: 1fr; }
+  .stats ul { grid-template-columns: repeat(2, 1fr); row-gap: 14px; }
+  .stats li:nth-child(3) { border-left: 0; }
+  section { padding: 60px 0; }
+}
+@media (max-width: 600px) {
+  .nav { order: 3; margin-left: 0; width: 100%; justify-content: space-between; gap: 10px; font-size: 15px; }
+  .langs { margin-left: auto; }
+  .hero { padding-top: 38px; }
+  .hero picture img { border-radius: 10px 10px 0 0; }
+  .store .badge img { height: 48px; }
+  body { font-size: 16px; }
+  table { min-width: 0; font-size: 15px; }
+  th, td { padding: 12px 10px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Restora", "operatingSystem": "macOS 14 or later", "applicationCategory": "MultimediaApplication", "description": "Rendez vos photos plus nettes et plus grandes, restaurez les vieux clichés et agrandissez des dossiers entiers sur votre Mac. L’IA tourne sur votre Mac : rien n’est envoyé. Le ×2 est gratuit.", "url": "https://alifo.app/restora/fr/", "inLanguage": "fr", "image": "https://alifo.app/restora/img/og-fr.png", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "Alifo", "url": "https://alifo.app/"}}</script>
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+<header class="site-header"><div class="container"><a class="brand" href="/restora/fr/"><img src="/restora/img/icon-64.png" width="34" height="34" alt="">Restora</a><nav class="nav" aria-label="Restora"><a href="#features">Fonctions</a><a href="#pricing">Tarifs</a><a href="#faq">FAQ</a><a href="/restora/support/">Assistance</a></nav><nav class="langs" aria-label="Langue"><a href="/restora/" hreflang="en" lang="en">EN</a><a href="/restora/fr/" hreflang="fr" lang="fr" aria-current="true">FR</a><a href="/restora/es/" hreflang="es" lang="es">ES</a></nav></div></header>
+<main id="main">
+<div class="hero"><div class="container"><h1>Des photos plus nettes et plus grandes. Les vieux clichés restaurés.</h1><p class="promise">Rien ne quitte votre Mac.</p><div class="store"><span class="soon">Bientôt sur le Mac App Store</span></div><picture><source type="image/webp" srcset="/restora/img/shots/fr/1-compare-640.webp 640w, /restora/img/shots/fr/1-compare-1280.webp 1280w, /restora/img/shots/fr/1-compare-1920.webp 1920w" sizes="(min-width: 1180px) 1100px, 94vw"><img src="/restora/img/shots/fr/1-compare-1280.png" srcset="/restora/img/shots/fr/1-compare-640.png 640w, /restora/img/shots/fr/1-compare-1280.png 1280w, /restora/img/shots/fr/1-compare-1920.png 1920w" sizes="(min-width: 1180px) 1100px, 94vw" width="1280" height="800" alt="Restora sur un Mac compare une enseigne lumineuse avant et après un agrandissement ×4 : floue à gauche, nette à droite." fetchpriority="high" decoding="async"></picture></div></div>
+<div class="stats"><ul><li>Jusqu’à ×4 et 16 384 px</li><li>Hors ligne</li><li>Puces Apple et Intel</li><li>Achat unique</li></ul></div>
+<section id="features"><div class="container"><p class="eyebrow">Fonctions</p><div class="feature"><picture><source type="image/webp" srcset="/restora/img/shots/fr/1-compare-640.webp 640w, /restora/img/shots/fr/1-compare-1280.webp 1280w, /restora/img/shots/fr/1-compare-1920.webp 1920w" sizes="(min-width: 1180px) 650px, (min-width: 900px) 56vw, 92vw"><img src="/restora/img/shots/fr/1-compare-1280.png" srcset="/restora/img/shots/fr/1-compare-640.png 640w, /restora/img/shots/fr/1-compare-1280.png 1280w, /restora/img/shots/fr/1-compare-1920.png 1920w" sizes="(min-width: 1180px) 650px, (min-width: 900px) 56vw, 92vw" width="1280" height="800" alt="Une enseigne lumineuse dans le comparateur de Restora, l’original à gauche et le résultat ×4 à droite." loading="lazy" decoding="async"></picture><div><h3>Plus net. Plus grand. Tout de suite.</h3><p>Déposez une photo : le résultat apparaît en une ou deux secondes dans un comparateur avant/après. Faites glisser la séparation, zoomez et déplacez en même temps, Espace pour voir l’original. Le ×2 est gratuit, sans limite.</p><span class="tag">Gratuit</span></div></div><div class="feature flip"><picture><source type="image/webp" srcset="/restora/img/shots/fr/2-oldphoto-640.webp 640w, /restora/img/shots/fr/2-oldphoto-1280.webp 1280w, /restora/img/shots/fr/2-oldphoto-1920.webp 1920w" sizes="(min-width: 1180px) 650px, (min-width: 900px) 56vw, 92vw"><img src="/restora/img/shots/fr/2-oldphoto-1280.png" srcset="/restora/img/shots/fr/2-oldphoto-640.png 640w, /restora/img/shots/fr/2-oldphoto-1280.png 1280w, /restora/img/shots/fr/2-oldphoto-1920.png 1920w" sizes="(min-width: 1180px) 650px, (min-width: 900px) 56vw, 92vw" width="1280" height="800" alt="Une photographie du pont de Brooklyn vers 1900, avant et après le mode Vieille photo." loading="lazy" decoding="async"></picture><div><h3>Redonnez vie aux vieilles photos.</h3><p>Le mode Vieille photo nettoie le grain des tirages numérisés et retrouve les détails. Restora reconnaît les vieilles photos, les dessins et les captures d’écran et propose le bon mode.</p><span class="tag">Pro</span></div></div><div class="feature"><picture><source type="image/webp" srcset="/restora/img/shots/fr/3-detail-640.webp 640w, /restora/img/shots/fr/3-detail-1280.webp 1280w, /restora/img/shots/fr/3-detail-1920.webp 1920w" sizes="(min-width: 1180px) 650px, (min-width: 900px) 56vw, 92vw"><img src="/restora/img/shots/fr/3-detail-1280.png" srcset="/restora/img/shots/fr/3-detail-640.png 640w, /restora/img/shots/fr/3-detail-1280.png 1280w, /restora/img/shots/fr/3-detail-1920.png 1920w" sizes="(min-width: 1180px) 650px, (min-width: 900px) 56vw, 92vw" width="1280" height="800" alt="Le Walt Disney Concert Hall à 100 % dans Restora, avant et après ×4." loading="lazy" decoding="async"></picture><div><h3>Jusqu’à 4× plus grand.</h3><p>×4, ou la taille exacte voulue jusqu’à 16 384 pixels, avec des tailles prêtes à l’emploi : fonds d’écran 4K et 5K, impressions A4 et A3 à 300 dpi, Instagram. Affiché à 100 % : du vrai détail, pas des pixels plus gros.</p><span class="tag">Pro</span></div></div><div class="feature flip"><picture><source type="image/webp" srcset="/restora/img/shots/fr/4-batch-640.webp 640w, /restora/img/shots/fr/4-batch-1280.webp 1280w, /restora/img/shots/fr/4-batch-1920.webp 1920w" sizes="(min-width: 1180px) 650px, (min-width: 900px) 56vw, 92vw"><img src="/restora/img/shots/fr/4-batch-1280.png" srcset="/restora/img/shots/fr/4-batch-640.png 640w, /restora/img/shots/fr/4-batch-1280.png 1280w, /restora/img/shots/fr/4-batch-1920.png 1920w" sizes="(min-width: 1180px) 650px, (min-width: 900px) 56vw, 92vw" width="1280" height="800" alt="Huit images dans la liste de Restora, deux exportées, une en cours, avec le temps restant." loading="lazy" decoding="async"></picture><div><h3>Un dossier entier d’un coup.</h3><p>Déposez un dossier : chaque image est listée avec son état et le temps restant. Tout exporter écrit les images agrandies dans le dossier choisi, sans jamais écraser vos originaux.</p><span class="tag">Pro</span></div></div><div class="feature"><picture><source type="image/webp" srcset="/restora/img/shots/fr/5-drawing-640.webp 640w, /restora/img/shots/fr/5-drawing-1280.webp 1280w, /restora/img/shots/fr/5-drawing-1920.webp 1920w" sizes="(min-width: 1180px) 650px, (min-width: 900px) 56vw, 92vw"><img src="/restora/img/shots/fr/5-drawing-1280.png" srcset="/restora/img/shots/fr/5-drawing-640.png 640w, /restora/img/shots/fr/5-drawing-1280.png 1280w, /restora/img/shots/fr/5-drawing-1920.png 1920w" sizes="(min-width: 1180px) 650px, (min-width: 900px) 56vw, 92vw" width="1280" height="800" alt="Une affiche WPA de 1940 agrandie ×4 en mode Dessin, avant et après." loading="lazy" decoding="async"></picture><div><h3>Les dessins restent nets.</h3><p>Le mode Dessin garde des traits propres et des aplats nets, pour les illustrations, affiches, BD et dessins au trait. Le mode Capture d’écran garde le texte et les interfaces bien nets.</p><span class="tag">Pro</span></div></div><div class="feature flip"><picture><source type="image/webp" srcset="/restora/img/shots/fr/6-private-640.webp 640w, /restora/img/shots/fr/6-private-1280.webp 1280w, /restora/img/shots/fr/6-private-1920.webp 1920w" sizes="(min-width: 1180px) 650px, (min-width: 900px) 56vw, 92vw"><img src="/restora/img/shots/fr/6-private-1280.png" srcset="/restora/img/shots/fr/6-private-640.png 640w, /restora/img/shots/fr/6-private-1280.png 1280w, /restora/img/shots/fr/6-private-1920.png 1920w" sizes="(min-width: 1180px) 650px, (min-width: 900px) 56vw, 92vw" width="1280" height="800" alt="Une photo de ciel nocturne dans Restora, avec un cadenas et les mots Fonctionne hors ligne, Aucun envoi." loading="lazy" decoding="async"></picture><div><h3>Rien ne quitte votre Mac.</h3><p>Les modèles d’IA sont dans l’app et tournent sur le Neural Engine de votre Mac. Sans compte, sans envoi, sans mesure d’audience, et Restora n’a pas accès au réseau : il fonctionne hors ligne.</p><span class="tag">Gratuit</span></div></div></div></section>
+<section class="alt-bg" id="compare"><div class="container"><h2>Aperçu ou Restora</h2><p class="intro">macOS sait déjà redimensionner une image. Restora ajoute du détail au lieu d’étirer les pixels.</p><div class="table-wrap"><table><thead><tr><th scope="col"></th><th scope="col">Redimensionner dans Aperçu</th><th scope="col">Restora</th></tr></thead><tbody><tr><th scope="row">Agrandir une image</th><td class="no">Oui, par interpolation : plus flou</td><td class="yes">Oui, avec l’IA : plus net</td></tr><tr><th scope="row">Nettoyer le grain et les artefacts JPEG</th><td class="no">Non</td><td class="yes">Oui</td></tr><tr><th scope="row">Comparer avant/après</th><td class="no">Non</td><td class="yes">Oui, avec un curseur</td></tr><tr><th scope="row">Un dossier entier d’un coup</th><td class="no">Avec un raccourci à construire</td><td class="yes">Oui, déposez le dossier (Pro)</td></tr><tr><th scope="row">Garder métadonnées, profil couleur, transparence</th><td class="no">Oui</td><td class="yes">Oui</td></tr></tbody></table></div></div></section>
+<section id="pricing"><div class="container"><h2>Tarifs</h2><div class="plans"><div class="plan"><h3>Gratuit</h3><p class="price">Gratuit, sans limite</p><ul><li>Agrandissement ×2 en mode Photo</li><li>Une image à la fois</li><li>Export JPEG et PNG, métadonnées conservées</li><li>Aperçu du ×4 et de chaque mode sur la zone visible</li></ul></div><div class="plan pro"><h3>Restora Pro</h3><p class="price">Achat unique sur le Mac App Store</p><ul><li>×4, tailles sur mesure et prêtes à l’emploi</li><li>Dossiers et lots</li><li>Modes Vieille photo, Dessin et Capture d’écran, débruitage réglable</li><li>HEIC et TIFF, partagé en famille (Partage familial)</li></ul></div></div></div></section>
+<section class="alt-bg" id="formats"><div class="container"><h2>Formats</h2><p class="intro">Profils couleur, transparence, 16 bits et orientation conservés. Interface en anglais, français et espagnol.</p><ul class="pills"><li>JPEG</li><li>PNG</li><li>HEIC</li><li>TIFF 8/16-bit</li><li>WebP</li><li>GIF</li><li>BMP</li></ul></div></section>
+<section class="faq" id="faq"><div class="container"><h2>FAQ</h2><details><summary>Restora est-il gratuit ?</summary><p>Oui pour le ×2 : agrandissez autant de photos que vous voulez ×2 en mode Photo et exportez-les en JPEG ou PNG, sans limite et sans compte. Restora Pro, un achat unique, débloque le ×4 et les tailles sur mesure, les lots, les modes Vieille photo, Dessin et Capture d’écran, le débruitage, le HEIC et le TIFF.</p></details><details><summary>Mes photos sont-elles envoyées quelque part ?</summary><p>Non. L’amélioration se fait sur votre Mac avec des modèles inclus dans l’app. Restora n’a pas accès au réseau : vos photos ne quittent jamais votre Mac. Voir la <a href="/restora/privacy/#fr">politique de confidentialité</a>.</p></details><details><summary>Comment ça marche ?</summary><p>Restora utilise les réseaux de neurones Real-ESRGAN (de Xintao Wang, licence BSD), convertis pour Core ML. Ils ont été mesurés face au redimensionnement classique sur des photos, de vieux tirages, des dessins et des captures d’écran avant d’être retenus.</p></details><details><summary>Restaure-t-il les visages ?</summary><p>Pas spécifiquement : Restora rend toute l’image plus nette et plus propre. Il n’a pas de modèle dédié aux visages et ne cherche pas à inventer ou modifier les traits des personnes.</p></details><details><summary>Jusqu’à quelle taille ?</summary><p>Jusqu’à 16 384 pixels de côté et 256 mégapixels. Restora prévient avant de commencer si une taille est trop grande.</p></details><details><summary>Fonctionne-t-il sur les Mac Intel ?</summary><p>Oui. Restora fonctionne sur les Mac à puce Apple et Intel avec macOS 14 Sonoma ou ultérieur. Il est plus rapide sur puce Apple, où il utilise le Neural Engine.</p></details><details><summary>Puis-je utiliser Pro sur plusieurs Mac, ou le partager en famille ?</summary><p>Oui. Restora Pro fonctionne sur chaque Mac connecté avec votre compte Apple (Restora › Restaurer les achats), et se partage avec votre famille via le Partage familial.</p></details><details><summary>Puis-je être remboursé ?</summary><p>Les achats passent par Apple, les remboursements aussi : demandez-le sur <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p></details></div></section>
+<section class="final"><div class="container"><h2>Des photos plus nettes et plus grandes, sur votre Mac.</h2><p>Agrandir, restaurer, comparer. Rien ne quitte votre Mac.</p><div class="store"><span class="soon">Bientôt sur le Mac App Store</span></div></div></section>
+</main>
+<footer class="site-footer"><div class="container"><span>© 2026 <a href="/">Alifo</a></span><a href="/restora/support/">Assistance</a><a href="/restora/privacy/">Confidentialité</a><a href="mailto:support@alifo.app">support@alifo.app</a><span class="note">Cette page ne charge ni script, ni police externe, ni traceur.</span></div></footer>
+</body>
+</html>
