@@ -5,10 +5,11 @@ Writes /grandio/ (English), /grandio/fr/, /grandio/es/, their images (WebP + PNG
 from captures/appstore), the 1200 × 630 share images, the Support and Privacy pages' header and footer, sitemap.xml
 and robots.txt. No script, no tracker, no external font: CSS in each page, system font.
 
-The Mac App Store link: while APP_STORE_URL is None the pages say "Coming soon on the Mac App Store" (plain text, no
-badge: Apple's badge must link to the app's App Store page). Once the app is live, set APP_STORE_URL to its product
-page (https://apps.apple.com/app/id…) and run again: the official badge (grandio/img/badges, downloaded unmodified
-from Apple's marketing tools, black on light, white on dark) appears and links there. See docs/SITE.md.
+Launch status: GRANDIO_STATUS is the one setting. "soon" (not yet on the App Store): the pages show a "Coming soon to
+the Mac App Store" button (not a link, no Apple badge) and the structured data carries no price; the homepage card
+(tools/make_home.py reads this setting) gets a "Coming soon" badge. "live": set APP_STORE_URL to the product page
+(https://apps.apple.com/app/id…) and run again: the official badge (grandio/img/badges, downloaded unmodified from
+Apple's marketing tools, black on light, white on dark) appears and links there. See docs/SITE.md.
 
 Run from the tooling worktree (branch "tooling"), with its own environment (docs/SITE.md):
   .venv/bin/python tools/make_site.py
@@ -34,7 +35,14 @@ RESTORA = Path.home() / "Developer" / "Restora"                # screenshots and
 SHOTS = RESTORA / "captures" / "appstore"
 ICON = RESTORA / "Restora" / "Resources" / "Assets.xcassets" / "AppIcon.appiconset" / "icon_512x512@2x.png"
 BASE = "https://alifo.app"
-APP_STORE_URL = None            # set when the app is live, e.g. "https://apps.apple.com/app/id0000000000"
+# The one launch setting (docs/SITE.md, "Grandio's launch"): "soon" until the app is on the Mac App Store, then "live"
+# with APP_STORE_URL set to its product page. tools/make_home.py reads it too (the homepage card's badge).
+GRANDIO_STATUS = "soon"         # "soon" | "live"
+APP_STORE_URL = None            # required when "live", e.g. "https://apps.apple.com/app/id0000000000"
+if GRANDIO_STATUS not in ("soon", "live"):
+    raise SystemExit(f'GRANDIO_STATUS must be "soon" or "live", not {GRANDIO_STATUS!r}')
+if GRANDIO_STATUS == "live" and not (APP_STORE_URL or "").startswith("https://apps.apple.com/"):
+    raise SystemExit('GRANDIO_STATUS = "live" needs APP_STORE_URL = "https://apps.apple.com/app/id…"')
 WIDTHS = [640, 1280, 1920]
 NAMES = ["1-print", "2-etsy", "3-oldphoto", "4-detail", "5-batch", "6-private"]
 LANGS = ["en", "fr", "es"]
@@ -54,7 +62,7 @@ T = {
         "langs_label": "Language",
         "h1": "Print anything big. Keep it sharp.",
         "promise": "Nothing leaves your Mac.",
-        "soon": "Coming soon on the Mac App Store",
+        "soon": "Coming soon to the Mac App Store",
         "badge_alt": "Download on the Mac App Store",
         "hero_alt": "Grandio's Print Studio on a Mac: a 1940 poster framed for an 18 × 24 in print at 300 dpi, with "
                     "the quality rated Good, and a loupe comparing the lettering before and after at 100 %.",
@@ -257,7 +265,7 @@ T = {
         "langs_label": "Idioma",
         "h1": "Imprime en grande. Siempre nítido.",
         "promise": "Nada sale de tu Mac.",
-        "soon": "Muy pronto en el Mac App Store",
+        "soon": "Próximamente en el Mac App Store",
         "badge_alt": "Descargar en el Mac App Store",
         "hero_alt": "El Print Studio de Grandio en un Mac: un cartel de 1940 encuadrado para imprimir a 18 × 24 "
                     "pulgadas a 300 ppp, calidad Buena, y una lupa que compara las letras antes y después al 100 %.",
@@ -510,7 +518,7 @@ a { color: var(--accent-ink); }
 .hero .promise { font-size: clamp(19px, 2.2vw, 25px); color: var(--hero-muted); margin: 0 0 30px; }
 .store { display: flex; justify-content: center; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 44px; }
 .store .badge img { height: 54px; width: auto; }
-.soon { display: inline-block; border: 1px solid rgba(255,255,255,.35); border-radius: 12px; padding: 12px 20px; font-weight: 600; font-size: 17px; color: var(--hero-ink); }
+.soon { display: inline-flex; align-items: center; min-height: 54px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.35); border-radius: 12px; padding: 0 22px; font-weight: 600; font-size: 17px; color: var(--hero-ink); cursor: default; }
 .hero picture img { margin: 0 auto; border-radius: 14px 14px 0 0; box-shadow: 0 -10px 60px rgba(0,0,0,.35); width: min(1100px, 100%); }
 
 /* Stats */
@@ -599,6 +607,7 @@ td.no { color: var(--muted); }
   .hero { padding-top: 38px; }
   .hero picture img { border-radius: 10px 10px 0 0; }
   .store .badge img { height: 48px; }
+  .soon { min-height: 48px; font-size: 16px; }
   body { font-size: 16px; }
   table { min-width: 0; font-size: 15px; }
   th, td { padding: 12px 10px; }
@@ -661,8 +670,8 @@ def picture(stem, alt, sizes, eager=False):
 
 def store_cta(lang):
     t = T[lang]
-    if APP_STORE_URL is None:
-        # Not live yet: plain text, no badge (Apple's badge must link to the app's App Store page). See docs/SITE.md.
+    if GRANDIO_STATUS == "soon":
+        # Not live yet: a button-shaped label, not a link, no Apple badge (it must link to the app's App Store page).
         return f'<div class="store"><span class="soon">{esc(t["soon"])}</span></div>'
     loc = BADGE_LOCALE[lang]
     return (f'<div class="store"><a class="badge" href="{APP_STORE_URL}"><picture>'
@@ -730,9 +739,10 @@ def json_ld(lang):
         "operatingSystem": "macOS 14 or later", "applicationCategory": "MultimediaApplication",
         "description": t["description"], "url": BASE + PATH[lang], "inLanguage": lang,
         "image": f"{BASE}/grandio/img/og-{lang}.png",
-        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
         "publisher": {"@type": "Organization", "name": "Alifo", "url": BASE + "/"},
     }
+    if GRANDIO_STATUS == "live":                                     # no price before the launch
+        data["offers"] = {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
     return f'<script type="application/ld+json">{json.dumps(data, ensure_ascii=False)}</script>\n'
 
 

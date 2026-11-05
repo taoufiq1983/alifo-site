@@ -5,6 +5,9 @@ Icons come from each project's AppIcon set. KeyToons' icon is a full square: it 
 (824 px body, rounded corners) like the others. AfterShot's project is not on this Mac: its icon is a neutral one
 (initial on the colours of its page), to be replaced by the real icon when available.
 
+An app that is not on the App Store yet gets a discreet "Coming soon" badge next to its name (class app-card-soon,
+styled in assets/style.css). Grandio's comes from GRANDIO_STATUS in tools/make_grandio.py, the one launch setting.
+
 Writes assets/img/apps/* and the cards in index.html (between <h2>Apps</h2> and the footer) of the site's working tree.
 Run from the tooling worktree (branch "tooling"), with its own environment (docs/SITE.md):
   .venv/bin/python tools/make_home.py
@@ -13,6 +16,8 @@ import os, re
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
+
+from make_grandio import GRANDIO_STATUS
 
 
 
@@ -32,6 +37,7 @@ EXTRACTO = DEV / "Extracto"
 KEYTOONS_SHOT = Path.home() / "Downloads" / "keytoons_shot_1_duck.png"
 OUT = SITE / "assets" / "img" / "apps"
 SF = "/System/Library/Fonts/SFNS.ttf"
+SOON = {"grandio": GRANDIO_STATUS == "soon"}                  # slug -> not on the App Store yet: "Coming soon" badge
 
 APPS = [
     # slug, name, tagline, icon source, screenshot, panel colours (top, bottom) when there is no screenshot
@@ -100,8 +106,9 @@ def card(slug, name, tagline, has_shot, colours):
     else:
         visual = (f'<div class="app-card-visual app-card-panel" style="background: linear-gradient(160deg, {colours[0]}, {colours[1]})">'
                   f'<img src="/assets/img/apps/{slug}-icon-256.png" width="128" height="128" loading="lazy" decoding="async" alt=""></div>')
+    badge = ' <span class="app-card-soon">Coming soon</span>' if SOON.get(slug) else ""
     return (f'  <a class="app-card" href="/{slug}/">\n    <div class="app-card-head">{icon}\n'
-            f'      <div><div class="name">{name}</div><div class="tag">{tagline}</div></div>\n    </div>\n'
+            f'      <div><div class="name">{name}{badge}</div><div class="tag">{tagline}</div></div>\n    </div>\n'
             f'    {visual}\n  </a>\n')
 
 

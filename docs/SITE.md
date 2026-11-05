@@ -66,6 +66,28 @@ Grandio's pages, with their hreflang alternates, once they exist), then `tools/m
 Link check (offline, files): `python3 ~/Developer/Restora/Tools/check_site.py ~/Downloads/alifo-site grandio extracto`
 (2026-11-02: 11 pages, 565 references, 0 errors).
 
+### Grandio's launch: `GRANDIO_STATUS` (one setting)
+
+Grandio is not on the App Store yet. One setting, at the top of `tools/make_grandio.py`, drives the whole site:
+
+| | `GRANDIO_STATUS = "soon"` (now) | `GRANDIO_STATUS = "live"` |
+|---|---|---|
+| `/grandio/`, `/fr/`, `/es/` (hero and final call) | button-shaped label, not a link: "Coming soon to the Mac App Store" / "Bientôt sur le Mac App Store" / "Próximamente en el Mac App Store"; no Apple badge | Apple's official badge, linking to `APP_STORE_URL` |
+| JSON-LD | no `offers` (no price before the launch) | `offers`: price 0 USD (free download) |
+| Homepage card (`make_home.py` imports the setting) | "Coming soon" badge next to the name (`.app-card-soon` in `assets/style.css`, site teal) | no badge |
+| `/grandio/support/`, `/grandio/privacy/` | online, unchanged | unchanged |
+
+At launch:
+1. In `tools/make_grandio.py`: `GRANDIO_STATUS = "live"` and `APP_STORE_URL = "https://apps.apple.com/app/id…"`
+   (App Store Connect › App Information › Apple ID). The script stops if "live" has no `apps.apple.com` URL.
+2. Run, in this order: `tools/make_grandio.py`, `tools/make_site.py`, `tools/make_home.py`.
+3. Check: `grep -c 'class="soon"' ~/Downloads/alifo-site/grandio/{,fr/,es/}index.html` (expected 0 each),
+   `grep -c app-card-soon ~/Downloads/alifo-site/index.html` (expected 0), then the link check below.
+4. Commit `main` and `tooling`, push.
+
+The `.app-card-soon` rule stays in `assets/style.css` (it is unused once no card has the badge).
+The homepage has no dark palette: it stays light in dark mode, badge included (2026-11-05 captures: identical).
+
 ### Homepage cards (`tools/make_home.py`)
 
 Each card has the app's icon, its name, a one-line tagline and a 16:10 visual. Styles: `.app-card-*` in
