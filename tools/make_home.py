@@ -35,7 +35,7 @@ SF = "/System/Library/Fonts/SFNS.ttf"
 
 APPS = [
     # slug, name, tagline, icon source, screenshot, panel colours (top, bottom) when there is no screenshot
-    ("aftershot", "AfterShot", "A private diary for allergy shots, on iPhone.", None, None, ("#26301f", "#10150f")),
+   
     ("alwah", "Alwah", "Learn the Quran by heart, on your Mac.",
      DEV / "Lemseed/App/Resources/Assets.xcassets/AppIcon.appiconset/icon_512x512@2x.png",
      DEV / "Lemseed/captures/appstore/mac-en/01-msid.png", None),
@@ -45,9 +45,7 @@ APPS = [
     ("grandio", "Grandio", "Print any photo big and sharp, with an Etsy print pack, on your Mac.",
      DEV / "Restora/Restora/Resources/Assets.xcassets/AppIcon.appiconset/icon_512x512@2x.png",
      DEV / "Restora/captures/appstore/mac-en/1-print.png", None),
-    ("keytoons", "KeyToons", "Fun keyboard sounds for your Mac.",
-     DEV / "KeyToons/Resources/Assets.xcassets/AppIcon.appiconset/icon_512x512@2x.png",
-     KEYTOONS_SHOT if KEYTOONS_SHOT.exists() else None, ("#2c3a5c", "#12161d")),
+
 ]
 SHOT_ALT = {
     "alwah": "Alwah on a Mac: today's memorization session, with recent, new and old words to recite.",
