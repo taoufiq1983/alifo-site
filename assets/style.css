@@ -126,6 +126,22 @@ hr {
 .app-card:hover, .app-card:focus-visible { border-color: var(--teal); }
 .app-card .name { font-weight: 700; font-size: 19px; }
 .app-card .tag { color: var(--muted); font-size: 15px; margin-top: 2px; }
+/* "Coming soon" next to the name of an app not yet on the App Store (tools/make_home.py, GRANDIO_STATUS) */
+.app-card-soon {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 9px;
+  border: 1px solid rgba(35, 112, 126, 0.28);
+  border-radius: 999px;
+  background: rgba(35, 112, 126, 0.08);
+  color: var(--teal);
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  vertical-align: 2px;
+  white-space: nowrap;
+}
 
 /* App cards: icon, name, one-line tagline, then a 16:10 visual (screenshot, or the icon on the app's colours) */
 .app-card-head { display: flex; align-items: center; gap: 14px; }

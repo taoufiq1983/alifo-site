@@ -70,7 +70,7 @@ a { color: var(--accent-ink); }
 .hero .promise { font-size: clamp(19px, 2.2vw, 25px); color: var(--hero-muted); margin: 0 0 30px; }
 .store { display: flex; justify-content: center; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 44px; }
 .store .badge img { height: 54px; width: auto; }
-.soon { display: inline-block; border: 1px solid rgba(255,255,255,.35); border-radius: 12px; padding: 12px 20px; font-weight: 600; font-size: 17px; color: var(--hero-ink); }
+.soon { display: inline-flex; align-items: center; min-height: 54px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.35); border-radius: 12px; padding: 0 22px; font-weight: 600; font-size: 17px; color: var(--hero-ink); cursor: default; }
 .hero picture img { margin: 0 auto; border-radius: 14px 14px 0 0; box-shadow: 0 -10px 60px rgba(0,0,0,.35); width: min(1100px, 100%); }
 
 /* Stats */
@@ -159,13 +159,14 @@ td.no { color: var(--muted); }
   .hero { padding-top: 38px; }
   .hero picture img { border-radius: 10px 10px 0 0; }
   .store .badge img { height: 48px; }
+  .soon { min-height: 48px; font-size: 16px; }
   body { font-size: 16px; }
   table { min-width: 0; font-size: 15px; }
   th, td { padding: 12px 10px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Grandio", "operatingSystem": "macOS 14 or later", "applicationCategory": "MultimediaApplication", "description": "Rendez vos photos plus nettes et plus grandes, restaurez les vieux clichés et agrandissez des dossiers entiers sur votre Mac. L’IA tourne sur votre Mac : rien n’est envoyé. Le ×2 est gratuit.", "url": "https://alifo.app/grandio/fr/", "inLanguage": "fr", "image": "https://alifo.app/grandio/img/og-fr.png", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "Alifo", "url": "https://alifo.app/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Grandio", "operatingSystem": "macOS 14 or later", "applicationCategory": "MultimediaApplication", "description": "Rendez vos photos plus nettes et plus grandes, restaurez les vieux clichés et agrandissez des dossiers entiers sur votre Mac. L’IA tourne sur votre Mac : rien n’est envoyé. Le ×2 est gratuit.", "url": "https://alifo.app/grandio/fr/", "inLanguage": "fr", "image": "https://alifo.app/grandio/img/og-fr.png", "publisher": {"@type": "Organization", "name": "Alifo", "url": "https://alifo.app/"}}</script>
 </head>
 <body>
 <a class="skip" href="#main">Aller au contenu</a>
